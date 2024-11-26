@@ -106,10 +106,12 @@ SpriteAtlas:
     - dc038b2ab22c65c4488779487c9dae97: 21300000
     - 0c6de69acca756c409be4810a8510ac5: 21300000
     - e8f4e1ea22c66c7478593a19e0add994: 21300000
+    - ea833eeab8ec0054da4b45ff38989d41: 21300000
     - d359cffafe45e0e4c82527e85234799b: 21300000
     - f60a784b4c692634c923c83dc6d7addb: 21300000
     - a889cb8ba677b3e418c33307c1336099: 21300000
     - d7236dfb0d0b195439305df676f2425b: 21300000
+    - 3761cf2c97934e043a6d337af48dd228: 21300000
     - fb6df7dc5ceebe744a0ea02ca322493c: 21300000
     - 5105fe1d825990746b9a92407ea447ca: 21300000
     - 37665b2ddd98b1849afa610bb8214b9e: 21300000
@@ -192,10 +194,12 @@ SpriteAtlas:
   - {fileID: 21300000, guid: dc038b2ab22c65c4488779487c9dae97, type: 3}
   - {fileID: 21300000, guid: 0c6de69acca756c409be4810a8510ac5, type: 3}
   - {fileID: 21300000, guid: e8f4e1ea22c66c7478593a19e0add994, type: 3}
+  - {fileID: 21300000, guid: ea833eeab8ec0054da4b45ff38989d41, type: 3}
   - {fileID: 21300000, guid: d359cffafe45e0e4c82527e85234799b, type: 3}
   - {fileID: 21300000, guid: f60a784b4c692634c923c83dc6d7addb, type: 3}
   - {fileID: 21300000, guid: a889cb8ba677b3e418c33307c1336099, type: 3}
   - {fileID: 21300000, guid: d7236dfb0d0b195439305df676f2425b, type: 3}
+  - {fileID: 21300000, guid: 3761cf2c97934e043a6d337af48dd228, type: 3}
   - {fileID: 21300000, guid: fb6df7dc5ceebe744a0ea02ca322493c, type: 3}
   - {fileID: 21300000, guid: 5105fe1d825990746b9a92407ea447ca, type: 3}
   - {fileID: 21300000, guid: 37665b2ddd98b1849afa610bb8214b9e, type: 3}
@@ -277,10 +281,12 @@ SpriteAtlas:
   - WoodenClub
   - WoodenShield
   - HunterBow
+  - Background
   - ManticoreArmor
   - ManticoreArmor
   - BattleguardArmor
   - BanditLightArmor [Paint]
+  - Panel
   - SteelTowerShield
   - BanditLightArmor [Paint]
   - TwoHandedWoodenMace
