@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.EventSystems;
 
-public class ShopManager : MonoBehaviour
+public class ShopItem : MonoBehaviour
 {
     [SerializeField] private ItemDataScriptableObject _itemDataSO;
     [SerializeField] private DescriptionManager _descriptionManager;
