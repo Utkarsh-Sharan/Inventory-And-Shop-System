@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a8fb80f6e22fbfd4187892a53c07e291, type: 3}
-  m_Name: CommonMeleeSO
+  m_Name: EpicHealableSO
   m_EditorClassIdentifier: 
-  itemType: 4
-  buyingPrice: 50
-  sellingPrice: 25
-  weight: 5
-  itemRarity: 0
-  quantity: 3
+  itemType: 3
+  buyingPrice: 350
+  sellingPrice: 175
+  weight: 35
+  itemRarity: 2
+  quantity: 2

@@ -213,11 +213,11 @@ PrefabInstance:
     - target: {fileID: -8394778597908329065, guid: 0798c38ed6189864ba1101e8862b8081, type: 3}
       propertyPath: _itemDataSO
       value: 
-      objectReference: {fileID: 11400000, guid: 21c9d2bb170a58249a005d2464314cbb, type: 2}
+      objectReference: {fileID: 11400000, guid: 6c01755626940f848a121527a88bd0e9, type: 2}
     - target: {fileID: 1090539421648726450, guid: 0798c38ed6189864ba1101e8862b8081, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: cfddf38e2d0fcbb40b169564fd58ea23, type: 3}
+      objectReference: {fileID: 21300000, guid: b7d19ec039fa7b141bd165aa95496c75, type: 3}
     - target: {fileID: 3895505738466343038, guid: 0798c38ed6189864ba1101e8862b8081, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -332,7 +332,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6691761698036004754, guid: 0798c38ed6189864ba1101e8862b8081, type: 3}
       propertyPath: m_Name
-      value: LegendaryBowImage
+      value: LegendaryHealableImage
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -355,11 +355,11 @@ PrefabInstance:
     - target: {fileID: -8394778597908329065, guid: 0798c38ed6189864ba1101e8862b8081, type: 3}
       propertyPath: _itemDataSO
       value: 
-      objectReference: {fileID: 11400000, guid: 25c2a566c532d074fbde7f24fba83bf3, type: 2}
+      objectReference: {fileID: 11400000, guid: 4f50d87b95ec7c1498578ec17d8b492f, type: 2}
     - target: {fileID: 1090539421648726450, guid: 0798c38ed6189864ba1101e8862b8081, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 7c00ea4006710ea4994e82ed1d0387ac, type: 3}
+      objectReference: {fileID: 21300000, guid: e76b30749d6bac4489c3ccf1ccb2c8fc, type: 3}
     - target: {fileID: 3895505738466343038, guid: 0798c38ed6189864ba1101e8862b8081, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -470,7 +470,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6691761698036004754, guid: 0798c38ed6189864ba1101e8862b8081, type: 3}
       propertyPath: m_Name
-      value: CommonArrowImage
+      value: CommonRingImage
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2335,11 +2335,11 @@ PrefabInstance:
     - target: {fileID: -8394778597908329065, guid: 0798c38ed6189864ba1101e8862b8081, type: 3}
       propertyPath: _itemDataSO
       value: 
-      objectReference: {fileID: 11400000, guid: 1ac31e7213b5c2d409c48788d2111298, type: 2}
+      objectReference: {fileID: 11400000, guid: b0f3ae00f41e4d144a55dc3879d5d92f, type: 2}
     - target: {fileID: 1090539421648726450, guid: 0798c38ed6189864ba1101e8862b8081, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 51d0cbd98e5243c4eac6f1e283a558c2, type: 3}
+      objectReference: {fileID: 21300000, guid: e41335ed24c5d4641b9e03ec7a6adcd0, type: 3}
     - target: {fileID: 3895505738466343038, guid: 0798c38ed6189864ba1101e8862b8081, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2454,7 +2454,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6691761698036004754, guid: 0798c38ed6189864ba1101e8862b8081, type: 3}
       propertyPath: m_Name
-      value: RareBowImage
+      value: RareHealableImage
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2477,11 +2477,11 @@ PrefabInstance:
     - target: {fileID: -8394778597908329065, guid: 0798c38ed6189864ba1101e8862b8081, type: 3}
       propertyPath: _itemDataSO
       value: 
-      objectReference: {fileID: 11400000, guid: ab1f9e4440e768545b414b8ae7fa82c4, type: 2}
+      objectReference: {fileID: 11400000, guid: 6d7dd8cb260f42148be3268164a1e582, type: 2}
     - target: {fileID: 1090539421648726450, guid: 0798c38ed6189864ba1101e8862b8081, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 2624c48670f92d649b04d03fe36abcd8, type: 3}
+      objectReference: {fileID: 21300000, guid: 8661c2c7e325a33438f06b02458fd199, type: 3}
     - target: {fileID: 3895505738466343038, guid: 0798c38ed6189864ba1101e8862b8081, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2596,7 +2596,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6691761698036004754, guid: 0798c38ed6189864ba1101e8862b8081, type: 3}
       propertyPath: m_Name
-      value: EpicArrowImage
+      value: EpicRingImage
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3021,7 +3021,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6691761698036004754, guid: 0798c38ed6189864ba1101e8862b8081, type: 3}
       propertyPath: m_Name
-      value: EpicMeleeImage
+      value: EpicWeaponImage
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3044,11 +3044,11 @@ PrefabInstance:
     - target: {fileID: -8394778597908329065, guid: 0798c38ed6189864ba1101e8862b8081, type: 3}
       propertyPath: _itemDataSO
       value: 
-      objectReference: {fileID: 11400000, guid: 9395c37a23af00c4096e48b9de4ff72e, type: 2}
+      objectReference: {fileID: 11400000, guid: 6fa3324d7b9ecbf43b02e286f62ba221, type: 2}
     - target: {fileID: 1090539421648726450, guid: 0798c38ed6189864ba1101e8862b8081, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: f2a6caf7b6afd7b4095cfac985b5869c, type: 3}
+      objectReference: {fileID: 21300000, guid: fb2acd264db5e24428dbf84cf8f0f467, type: 3}
     - target: {fileID: 3895505738466343038, guid: 0798c38ed6189864ba1101e8862b8081, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3163,7 +3163,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6691761698036004754, guid: 0798c38ed6189864ba1101e8862b8081, type: 3}
       propertyPath: m_Name
-      value: RareMeleeImage
+      value: RareWeaponImage
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3557,7 +3557,7 @@ PrefabInstance:
     - target: {fileID: -8394778597908329065, guid: 0798c38ed6189864ba1101e8862b8081, type: 3}
       propertyPath: _itemDataSO
       value: 
-      objectReference: {fileID: 11400000, guid: 7c3f19d272ead7b408ddea7060cbb0b0, type: 2}
+      objectReference: {fileID: 11400000, guid: 87ed78aa73725e8428d6925fd7359f9a, type: 2}
     - target: {fileID: 1090539421648726450, guid: 0798c38ed6189864ba1101e8862b8081, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -3672,7 +3672,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6691761698036004754, guid: 0798c38ed6189864ba1101e8862b8081, type: 3}
       propertyPath: m_Name
-      value: CommonMeleeImage
+      value: CommonWeaponImage
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5006,11 +5006,11 @@ PrefabInstance:
     - target: {fileID: -8394778597908329065, guid: 0798c38ed6189864ba1101e8862b8081, type: 3}
       propertyPath: _itemDataSO
       value: 
-      objectReference: {fileID: 11400000, guid: ea29c3d4a25b0db44b3ef453e3daf031, type: 2}
+      objectReference: {fileID: 11400000, guid: c584c1baa32e6cc45b104eafa6bf6587, type: 2}
     - target: {fileID: 1090539421648726450, guid: 0798c38ed6189864ba1101e8862b8081, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: e8f4e1ea22c66c7478593a19e0add994, type: 3}
+      objectReference: {fileID: 21300000, guid: f84b6dd0347a94f4a9a69ac911fc1f9d, type: 3}
     - target: {fileID: 3895505738466343038, guid: 0798c38ed6189864ba1101e8862b8081, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5125,7 +5125,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6691761698036004754, guid: 0798c38ed6189864ba1101e8862b8081, type: 3}
       propertyPath: m_Name
-      value: RareArrowImage
+      value: RareRingImage
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5293,11 +5293,11 @@ PrefabInstance:
     - target: {fileID: -8394778597908329065, guid: 0798c38ed6189864ba1101e8862b8081, type: 3}
       propertyPath: _itemDataSO
       value: 
-      objectReference: {fileID: 11400000, guid: 73e2b994511bfa1429cd9134bd43d79a, type: 2}
+      objectReference: {fileID: 11400000, guid: 3083dabf6f60f2e4cb73f3204ad3e413, type: 2}
     - target: {fileID: 1090539421648726450, guid: 0798c38ed6189864ba1101e8862b8081, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 0c7f2b30efde63b4e85506baea6e3484, type: 3}
+      objectReference: {fileID: 21300000, guid: 60c1d42986dc0094c808b9e135f31ba2, type: 3}
     - target: {fileID: 3895505738466343038, guid: 0798c38ed6189864ba1101e8862b8081, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5408,7 +5408,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6691761698036004754, guid: 0798c38ed6189864ba1101e8862b8081, type: 3}
       propertyPath: m_Name
-      value: CommonBowImage
+      value: CommonHealableImage
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5556,11 +5556,11 @@ PrefabInstance:
     - target: {fileID: -8394778597908329065, guid: 0798c38ed6189864ba1101e8862b8081, type: 3}
       propertyPath: _itemDataSO
       value: 
-      objectReference: {fileID: 11400000, guid: 101f9097aa35d9d419332a26c14e977d, type: 2}
+      objectReference: {fileID: 11400000, guid: 64fd71d652da60f44a9ecedd081ad118, type: 2}
     - target: {fileID: 1090539421648726450, guid: 0798c38ed6189864ba1101e8862b8081, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: fb1f2a59f67448f4db4f862dcb445aa9, type: 3}
+      objectReference: {fileID: 21300000, guid: f66c057114b8725409847a8a8e83a75b, type: 3}
     - target: {fileID: 3895505738466343038, guid: 0798c38ed6189864ba1101e8862b8081, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5675,7 +5675,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6691761698036004754, guid: 0798c38ed6189864ba1101e8862b8081, type: 3}
       propertyPath: m_Name
-      value: LegendaryArrowImage
+      value: LegendaryRingImage
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5819,11 +5819,11 @@ PrefabInstance:
     - target: {fileID: -8394778597908329065, guid: 0798c38ed6189864ba1101e8862b8081, type: 3}
       propertyPath: _itemDataSO
       value: 
-      objectReference: {fileID: 11400000, guid: 6fa3324d7b9ecbf43b02e286f62ba221, type: 2}
+      objectReference: {fileID: 11400000, guid: 66c113936581ba740bfedc842d124cf6, type: 2}
     - target: {fileID: 1090539421648726450, guid: 0798c38ed6189864ba1101e8862b8081, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: fb2acd264db5e24428dbf84cf8f0f467, type: 3}
+      objectReference: {fileID: 21300000, guid: 6f17b16f02b2246499ac554b97a16d4a, type: 3}
     - target: {fileID: 3895505738466343038, guid: 0798c38ed6189864ba1101e8862b8081, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5938,7 +5938,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6691761698036004754, guid: 0798c38ed6189864ba1101e8862b8081, type: 3}
       propertyPath: m_Name
-      value: EpicBowImage
+      value: EpicHealableImage
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6656,7 +6656,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6691761698036004754, guid: 0798c38ed6189864ba1101e8862b8081, type: 3}
       propertyPath: m_Name
-      value: LegendaryMeleeImage
+      value: LegendaryWeaponImage
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

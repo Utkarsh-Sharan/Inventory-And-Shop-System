@@ -37,14 +37,14 @@ public class ShopManager : MonoBehaviour
             case ItemType.HELMET:
                 return "Helmet";
 
-            case ItemType.BOW:
-                return "Bow";
+            case ItemType.WEAPON:
+                return "Weapon";
 
-            case ItemType.ARROW:
-                return "Arrow";
+            case ItemType.HEALABLE:
+                return "Healable";
 
-            case ItemType.MELEE:
-                return "Melee";
+            case ItemType.RING:
+                return "Ring";
         }
         return null;
     }
