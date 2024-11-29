@@ -1,10 +1,26 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShopView : MonoBehaviour
 {
+    [SerializeField] private Image _itemImage;
+    [SerializeField] private Image _rarityBackgroundImage;
+
     private ShopController _shopController;
+
+    private void Start()
+    {
+        DisplayItemImageAndRarity();
+    }
+
+    private void DisplayItemImageAndRarity()
+    {
+        _itemImage.sprite = _shopController.GetShopModel().ItemDataSO.itemImage;
+        _rarityBackgroundImage.sprite = _shopController.GetShopModel().ItemDataSO.rarityBackgroundImage;
+    }
 
     public void SetShopController(ShopController shopController)
     {

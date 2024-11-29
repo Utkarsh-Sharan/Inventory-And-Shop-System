@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8fb80f6e22fbfd4187892a53c07e291, type: 3}
   m_Name: LegendaryRingSO
   m_EditorClassIdentifier: 
+  itemImage: {fileID: 21300000, guid: f66c057114b8725409847a8a8e83a75b, type: 3}
+  rarityBackgroundImage: {fileID: 21300000, guid: f51787da7231e434c9f318683e9d5011, type: 3}
   itemType: 4
   buyingPrice: 500
   sellingPrice: 250
   weight: 50
   itemRarity: 3
-  quantity: 1
