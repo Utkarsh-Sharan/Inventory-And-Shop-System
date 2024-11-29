@@ -12,18 +12,6 @@ public class DescriptionManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _itemRarity;
     [SerializeField] private TextMeshProUGUI _quantity;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void ItemDescription(string itemType, float buyingPrice, float sellingPrice, float weight, string itemRarity, int quantity)
     {
         _itemType.text = $"Type: {itemType}";

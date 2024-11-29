@@ -10,9 +10,11 @@ public class ShopView : MonoBehaviour
     [SerializeField] private Image _rarityBackgroundImage;
 
     private ShopController _shopController;
+    private DescriptionManager _descriptionManager;
 
-    private void Start()
+    public void SetShopController(ShopController shopController)
     {
+        _shopController = shopController;
         DisplayItemImageAndRarity();
     }
 
@@ -22,14 +24,10 @@ public class ShopView : MonoBehaviour
         _rarityBackgroundImage.sprite = _shopController.GetShopModel().ItemDataSO.rarityBackgroundImage;
     }
 
-    public void SetShopController(ShopController shopController)
-    {
-        _shopController = shopController;
-    }
-
     public void DisplayItemDescription(DescriptionManager descriptionManager)
     {
-        descriptionManager.ItemDescription
+        _descriptionManager = descriptionManager;
+        _descriptionManager.ItemDescription
             (
             CheckItemType(),
             _shopController.GetShopModel().ItemDataSO.buyingPrice,

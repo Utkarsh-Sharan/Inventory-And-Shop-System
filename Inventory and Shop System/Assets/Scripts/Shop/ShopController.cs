@@ -11,10 +11,9 @@ public class ShopController : MonoBehaviour, IPointerEnterHandler, IPointerDownH
 
     public void Initialize(ItemDataScriptableObject itemDataSO, DescriptionManager descriptionManager)
     {
+        _descriptionManager = descriptionManager;
         _shopModel = new ShopModel(itemDataSO);
         _shopView.SetShopController(this);
-        _descriptionManager = descriptionManager;
-        UpdateView();
     }
 
     public void OnPointerEnter(PointerEventData eventData)

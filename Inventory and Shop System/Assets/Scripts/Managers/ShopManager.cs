@@ -5,13 +5,22 @@ using UnityEngine;
 
 public class ShopManager : MonoBehaviour
 {
-    [SerializeField] private Transform _shopPanel;
-    [SerializeField] private GameObject _shopItemPrefab;
-    [SerializeField] private List<ItemDataScriptableObject> _shopItems;
-    [SerializeField] private DescriptionManager _descriptionManager;
+    private Transform _shopPanel;
+    private GameObject _shopItemPrefab;
+    private List<ItemDataScriptableObject> _shopItems;
+    //[SerializeField] private DescriptionManager _descriptionManager;
+    private DescriptionManager _descriptionManager;
 
-    private void Start()
+    public ShopManager(Transform shopPanel, GameObject shopItemPrefab, List<ItemDataScriptableObject> shopItems)
     {
+        _shopPanel = shopPanel;
+        _shopItemPrefab = shopItemPrefab;
+        _shopItems = shopItems;
+    }
+
+    public void Init(DescriptionManager descriptionManager)
+    {
+        _descriptionManager = descriptionManager; 
         PopulateShop();
     }
 
