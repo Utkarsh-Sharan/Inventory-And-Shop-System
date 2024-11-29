@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class ShopItem : MonoBehaviour
 {
@@ -13,7 +14,24 @@ public class ShopItem : MonoBehaviour
 
     private void Start()
     {
-        
+        switch (this._itemDataSO.itemRarity)
+        {
+            case ItemRarity.COMMON:
+                _quantity = 3;
+                break;
+
+            case ItemRarity.RARE:
+                _quantity = 2;
+                break;
+
+            case ItemRarity.EPIC:
+                _quantity = 2;
+                break;
+
+            case ItemRarity.LEGENDARY:
+                _quantity = 1;
+                break;
+        }
     }
 
     public void ItemDescription()
@@ -56,21 +74,30 @@ public class ShopItem : MonoBehaviour
         switch (this._itemDataSO.itemRarity)
         {
             case ItemRarity.COMMON:
-                _quantity = 3;
                 return "Common";
 
             case ItemRarity.RARE:
-                _quantity = 2;
                 return "Rare";
 
             case ItemRarity.EPIC:
-                _quantity = 2;
                 return "Epic";
 
             case ItemRarity.LEGENDARY:
-                _quantity = 1;
                 return "Legendary";
         }
         return null;
+    }
+
+    public void OnButtonPress()
+    {
+        if (this._quantity == 0)
+            return;
+
+        --this._quantity;
+    }
+
+    public void OnButtonRelease()
+    {
+        ItemDescription();
     }
 }
