@@ -9,6 +9,8 @@ public class ShopItem : MonoBehaviour
     [SerializeField] private ItemDataScriptableObject _itemDataSO;
     [SerializeField] private DescriptionManager _descriptionManager;
 
+    private int _quantity;
+
     private void Start()
     {
         
@@ -22,8 +24,8 @@ public class ShopItem : MonoBehaviour
             this._itemDataSO.buyingPrice, 
             this._itemDataSO.sellingPrice, 
             this._itemDataSO.weight, 
-            CheckItemRarity(), 
-            this._itemDataSO.quantity
+            CheckItemRarityAndSetQuantity(), 
+            _quantity
             );
     }
 
@@ -49,20 +51,24 @@ public class ShopItem : MonoBehaviour
         return null;
     }
 
-    private string CheckItemRarity()
+    private string CheckItemRarityAndSetQuantity()
     {
         switch (this._itemDataSO.itemRarity)
         {
             case ItemRarity.COMMON:
+                _quantity = 3;
                 return "Common";
 
             case ItemRarity.RARE:
+                _quantity = 2;
                 return "Rare";
 
             case ItemRarity.EPIC:
+                _quantity = 2;
                 return "Epic";
 
             case ItemRarity.LEGENDARY:
+                _quantity = 1;
                 return "Legendary";
         }
         return null;
