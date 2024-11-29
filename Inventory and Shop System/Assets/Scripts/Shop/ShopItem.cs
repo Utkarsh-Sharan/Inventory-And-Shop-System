@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using System;
 
 public class ShopItem : MonoBehaviour
 {
@@ -13,6 +14,11 @@ public class ShopItem : MonoBehaviour
     private int _quantity;
 
     private void Start()
+    {
+        SetInitialQuantity();
+    }
+
+    private void SetInitialQuantity()
     {
         switch (this._itemDataSO.itemRarity)
         {
@@ -91,13 +97,12 @@ public class ShopItem : MonoBehaviour
     public void OnButtonPress()
     {
         if (this._quantity == 0)
+        {
+            ItemDescription();
             return;
+        }
 
         --this._quantity;
-    }
-
-    public void OnButtonRelease()
-    {
         ItemDescription();
     }
 }

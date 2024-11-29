@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 4953558223300734797}
   - component: {fileID: 5198811919571364183}
   - component: {fileID: 5190176038549720977}
-  - component: {fileID: -8394778597908329065}
-  - component: {fileID: -1966124555490371112}
+  - component: {fileID: 6186219735126697021}
+  - component: {fileID: 3422536308668764027}
   m_Layer: 5
   m_Name: ShopSlot
   m_TagString: Untagged
@@ -123,7 +123,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &-8394778597908329065
+--- !u!114 &6186219735126697021
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -132,12 +132,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6610668342513349500}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 042c95eed8f790449bd05246de8d89d6, type: 3}
+  m_Script: {fileID: 11500000, guid: 4b86b61783a7b5d478a59f7737427201, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _itemDataSO: {fileID: 0}
-  _descriptionManager: {fileID: 0}
---- !u!114 &-1966124555490371112
+  _shopView: {fileID: 3422536308668764027}
+--- !u!114 &3422536308668764027
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -146,58 +145,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6610668342513349500}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Script: {fileID: 11500000, guid: 8d872b0d46090cc4e8eddd254ec37cb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: -8394778597908329065}
-          m_TargetAssemblyTypeName: ShopManager, Assembly-CSharp
-          m_MethodName: ItemDescription
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - eventID: 2
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: -8394778597908329065}
-          m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
-          m_MethodName: OnButtonPress
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - eventID: 3
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: -8394778597908329065}
-          m_TargetAssemblyTypeName: ShopItem, Assembly-CSharp
-          m_MethodName: OnButtonRelease
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1 &6691761698036004754
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,7 +160,7 @@ GameObject:
   - component: {fileID: 3187727634663807958}
   - component: {fileID: 1090539421648726450}
   m_Layer: 5
-  m_Name: CommonArmorImage
+  m_Name: ItemImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

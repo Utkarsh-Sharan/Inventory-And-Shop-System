@@ -1,18 +1,44 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class ShopModel : MonoBehaviour
+public class ShopModel
 {
-    // Start is called before the first frame update
-    void Start()
+    public ItemDataScriptableObject ItemDataSO { get; private set; }
+    private int _quantity;
+
+    public ShopModel(ItemDataScriptableObject itemDataSO)
     {
-        
+        ItemDataSO = itemDataSO;
+        SetInitialQuantity();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void SetInitialQuantity()
     {
-        
+        switch (this.ItemDataSO.itemRarity)
+        {
+            case ItemRarity.COMMON:
+                _quantity = 3;
+                break;
+
+            case ItemRarity.RARE:
+                _quantity = 2;
+                break;
+
+            case ItemRarity.EPIC:
+                _quantity = 2;
+                break;
+
+            case ItemRarity.LEGENDARY:
+                _quantity = 1;
+                break;
+        }
+    }
+
+    public void DecreaseItemQuantity()
+    {
+        if(_quantity > 0)
+            --_quantity;
+    }
+
+    public int GetItemQuantity()
+    {
+        return _quantity;
     }
 }
