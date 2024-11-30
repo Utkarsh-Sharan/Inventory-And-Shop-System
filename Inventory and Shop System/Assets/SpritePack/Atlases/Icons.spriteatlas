@@ -87,6 +87,7 @@ SpriteAtlas:
     - 2624c48670f92d649b04d03fe36abcd8: 21300000
     - dbaa50961e3cd37468021eb65d631c9f: 21300000
     - 9309c4b66286c02498fce9e465b4916b: 21300000
+    - 77a00e374896a4e4cb097f3d0d0c1cde: 21300000
     - cb71f977c061814419dd5a6a79a1a061: 21300000
     - c6b96b87adbd25343b9079d963ffb637: 21300000
     - 67eaf2a7d1686074684270d1821c55cb: 21300000
@@ -175,6 +176,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 2624c48670f92d649b04d03fe36abcd8, type: 3}
   - {fileID: 21300000, guid: dbaa50961e3cd37468021eb65d631c9f, type: 3}
   - {fileID: 21300000, guid: 9309c4b66286c02498fce9e465b4916b, type: 3}
+  - {fileID: 21300000, guid: 77a00e374896a4e4cb097f3d0d0c1cde, type: 3}
   - {fileID: 21300000, guid: cb71f977c061814419dd5a6a79a1a061, type: 3}
   - {fileID: 21300000, guid: c6b96b87adbd25343b9079d963ffb637, type: 3}
   - {fileID: 21300000, guid: 67eaf2a7d1686074684270d1821c55cb, type: 3}
@@ -262,6 +264,7 @@ SpriteAtlas:
   - MarauderBow
   - Grog
   - GreyKnight
+  - QuantityBackground
   - RedwoodBow
   - VikingShortBow
   - ScoutHelm

@@ -10,15 +10,13 @@ public class DescriptionManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _sellingPrice;
     [SerializeField] private TextMeshProUGUI _weight;
     [SerializeField] private TextMeshProUGUI _itemRarity;
-    [SerializeField] private TextMeshProUGUI _quantity;
 
-    public void ItemDescription(string itemType, float buyingPrice, float sellingPrice, float weight, string itemRarity, int quantity)
+    public void ItemDescription(string itemType, float buyingPrice, float sellingPrice, float weight, string itemRarity)
     {
         _itemType.text = $"Type: {itemType}";
         _buyingPrice.text = $"Buying Price: {buyingPrice.ToString()}";
         _sellingPrice.text = $"Selling Price: {sellingPrice.ToString()}";
         _weight.text = $"Weight: {weight.ToString()}";
         _itemRarity.text = $"Rarity: {itemRarity}";
-        _quantity.text = $"Quantity: {quantity.ToString()}";
     }
 }

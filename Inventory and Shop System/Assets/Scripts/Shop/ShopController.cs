@@ -30,6 +30,7 @@ public class ShopController : MonoBehaviour, IPointerEnterHandler, IPointerDownH
     private void UpdateView()
     {
         _shopView.DisplayItemDescription(_descriptionManager);
+        _shopView.DisplayUpdatedItemQuantity();
     }
 
     public ShopModel GetShopModel()

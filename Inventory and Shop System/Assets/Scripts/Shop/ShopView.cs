@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,6 +9,7 @@ public class ShopView : MonoBehaviour
 {
     [SerializeField] private Image _itemImage;
     [SerializeField] private Image _rarityBackgroundImage;
+    [SerializeField] private TextMeshProUGUI _itemQuantity;
 
     private ShopController _shopController;
     private DescriptionManager _descriptionManager;
@@ -15,13 +17,14 @@ public class ShopView : MonoBehaviour
     public void SetShopController(ShopController shopController)
     {
         _shopController = shopController;
-        DisplayItemImageAndRarity();
+        DisplayItemImageRarityAndQuantity();
     }
 
-    private void DisplayItemImageAndRarity()
+    private void DisplayItemImageRarityAndQuantity()
     {
         _itemImage.sprite = _shopController.GetShopModel().ItemDataSO.itemImage;
         _rarityBackgroundImage.sprite = _shopController.GetShopModel().ItemDataSO.rarityBackgroundImage;
+        _itemQuantity.text = _shopController.GetShopModel().GetItemQuantity().ToString();
     }
 
     public void DisplayItemDescription(DescriptionManager descriptionManager)
@@ -33,9 +36,13 @@ public class ShopView : MonoBehaviour
             _shopController.GetShopModel().ItemDataSO.buyingPrice,
             _shopController.GetShopModel().ItemDataSO.sellingPrice,
             _shopController.GetShopModel().ItemDataSO.weight,
-            CheckItemRarity(),
-            _shopController.GetShopModel().GetItemQuantity()
+            CheckItemRarity()
             );
+    }
+
+    public void DisplayUpdatedItemQuantity()
+    {
+        _itemQuantity.text = _shopController.GetShopModel().GetItemQuantity().ToString();
     }
 
     private string CheckItemType()
