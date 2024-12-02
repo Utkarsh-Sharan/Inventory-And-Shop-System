@@ -1,12 +1,13 @@
 public class ShopModel
 {
     public ItemDataScriptableObject ItemDataSO { get; private set; }
-    private int _quantity;
+    private int _quantity; //make initial quantity variable.
 
     public ShopModel(ItemDataScriptableObject itemDataSO)
     {
         ItemDataSO = itemDataSO;
-        SetInitialQuantity();
+        _quantity = ItemDataSO.itemInitialQuantity;
+        //SetInitialQuantity();
     }
 
     private void SetInitialQuantity()

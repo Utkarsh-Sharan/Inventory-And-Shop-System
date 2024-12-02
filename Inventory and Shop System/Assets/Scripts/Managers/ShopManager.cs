@@ -24,6 +24,6 @@ public class ShopManager
     public void Init(DescriptionManager descriptionManager)
     {
         _descriptionManager = descriptionManager;
-        _shopPopulator.PopulateShop(_shopPanel, _shopItemPrefab, _shopItems, descriptionManager);
+        _shopPopulator.PopulateShop(_shopPanel, _shopItemPrefab, _shopItems, _descriptionManager);
     }
 }

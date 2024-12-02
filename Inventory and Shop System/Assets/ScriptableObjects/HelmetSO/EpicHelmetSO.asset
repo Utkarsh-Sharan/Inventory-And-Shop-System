@@ -19,3 +19,4 @@ MonoBehaviour:
   sellingPrice: 175
   weight: 35
   itemRarity: 2
+  itemInitialQuantity: 1

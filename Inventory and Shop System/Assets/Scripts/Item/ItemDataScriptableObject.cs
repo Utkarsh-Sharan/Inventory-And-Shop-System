@@ -12,4 +12,5 @@ public class ItemDataScriptableObject : ScriptableObject
     public float sellingPrice;
     public float weight;
     public ItemRarity itemRarity;
+    public int itemInitialQuantity;
 }

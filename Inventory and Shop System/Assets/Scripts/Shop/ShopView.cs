@@ -24,7 +24,7 @@ public class ShopView : MonoBehaviour
     {
         _itemImage.sprite = _shopController.GetShopModel().ItemDataSO.itemImage;
         _rarityBackgroundImage.sprite = _shopController.GetShopModel().ItemDataSO.rarityBackgroundImage;
-        _itemQuantity.text = _shopController.GetShopModel().GetItemQuantity().ToString();
+        DisplayUpdatedItemQuantity();
     }
 
     public void DisplayItemDescription(DescriptionManager descriptionManager)
@@ -49,7 +49,7 @@ public class ShopView : MonoBehaviour
     {
         switch (_shopController.GetShopModel().ItemDataSO.itemType)
         {
-            case ItemType.ARMOR:
+            case ItemType.ARMOR:        //make constants for strings
                 return "Armor";
 
             case ItemType.HELMET:
