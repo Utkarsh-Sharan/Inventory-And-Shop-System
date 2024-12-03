@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Transform _shopPanel;
     [SerializeField] private GameObject _shopItemPrefab;
     [SerializeField] private List<ItemDataScriptableObject> _shopItems;
-    [SerializeField] private ShopPopulator _shopPopulator;
+    [SerializeField] private ShopController _shopController;
 
     private void Start()
     {
@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
 
     private void CreateManagers()
     {
-        _shopManager = new ShopManager(_shopPanel, _shopItemPrefab, _shopItems, _shopPopulator);
+        _shopManager = new ShopManager(_shopPanel, _shopItemPrefab, _shopItems, _shopController);
     }
 
     private void InjectDependencies()

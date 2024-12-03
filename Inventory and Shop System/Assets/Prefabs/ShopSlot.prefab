@@ -222,8 +222,7 @@ GameObject:
   - component: {fileID: 4953558223300734797}
   - component: {fileID: 5198811919571364183}
   - component: {fileID: 5190176038549720977}
-  - component: {fileID: 6186219735126697021}
-  - component: {fileID: 3422536308668764027}
+  - component: {fileID: 7205801016093111217}
   m_Layer: 5
   m_Name: ShopSlot
   m_TagString: Untagged
@@ -334,7 +333,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &6186219735126697021
+--- !u!114 &7205801016093111217
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -343,20 +342,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6610668342513349500}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b86b61783a7b5d478a59f7737427201, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _shopView: {fileID: 3422536308668764027}
---- !u!114 &3422536308668764027
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6610668342513349500}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d872b0d46090cc4e8eddd254ec37cb8, type: 3}
+  m_Script: {fileID: 11500000, guid: 0afead62225671d45a2aa9507dfe1481, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _itemImage: {fileID: 1090539421648726450}

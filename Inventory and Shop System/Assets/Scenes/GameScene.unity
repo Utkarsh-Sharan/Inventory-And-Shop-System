@@ -1481,26 +1481,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 789641338}
-  - component: {fileID: 789641337}
+  - component: {fileID: 789641339}
   m_Layer: 5
-  m_Name: ShopPopulator
+  m_Name: ShopController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &789641337
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 789641336}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 968b354c206ded146bda40b22545adfe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &789641338
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1520,6 +1508,19 @@ RectTransform:
   m_AnchoredPosition: {x: 450, y: -325}
   m_SizeDelta: {x: 90, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &789641339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 789641336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b86b61783a7b5d478a59f7737427201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _shopView: {fileID: 0}
 --- !u!1001 &832305434
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4713,7 +4714,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6fa3324d7b9ecbf43b02e286f62ba221, type: 2}
   - {fileID: 11400000, guid: ba826eb3773e45c44a3bde1432aa382e, type: 2}
   - {fileID: 11400000, guid: 2fc9f55bc7895ed419e7599193345327, type: 2}
-  _shopPopulator: {fileID: 789641337}
+  _shopController: {fileID: 789641339}
 --- !u!4 &1988353435
 Transform:
   m_ObjectHideFlags: 0

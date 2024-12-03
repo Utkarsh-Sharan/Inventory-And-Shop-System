@@ -3,34 +3,45 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ShopController : MonoBehaviour, IPointerEnterHandler, IPointerDownHandler
+public class ShopController : MonoBehaviour
 {
     private ShopModel _shopModel;
     private DescriptionManager _descriptionManager;
-    [SerializeField] private ShopView _shopView;
 
-    public void Initialize(ItemDataScriptableObject itemDataSO, DescriptionManager descriptionManager)
+    public void Initialize(Transform shopPanel, GameObject shopItemPrefab, List<ItemDataScriptableObject> shopItems, DescriptionManager descriptionManager)
     {
         _descriptionManager = descriptionManager;
-        _shopModel = new ShopModel(itemDataSO);
-        _shopView.SetShopController(this);
+        
+        foreach(var itemData in shopItems )
+        {
+            var shopItemObject = Instantiate(shopItemPrefab, shopPanel);
+            ShopItem shopItem = shopItemObject.GetComponent<ShopItem>();
+            ShopModel shopModel = new ShopModel(itemData);
+
+            shopItem.SetShopController(this);
+            shopItem.Initialize(shopModel);
+        }
     }
 
-    public void OnPointerEnter(PointerEventData eventData)
+    public void OnPointerEnter(ShopItem shopItem)
     {
-        UpdateView();
+        ShopModel model = shopItem.GetShopModel();
+
+        _descriptionManager?.ItemDescription
+        (
+            model.CheckItemType(),
+            model.ItemDataSO.buyingPrice,
+            model.ItemDataSO.sellingPrice,
+            model.ItemDataSO.weight,
+            model.CheckItemRarity()
+        );
     }
 
-    public void OnPointerDown(PointerEventData eventData)
+    public void OnPointerDown(ShopItem shopItem)
     {
-        _shopModel.DecreaseItemQuantity();
-        UpdateView();
-    }
-
-    private void UpdateView()
-    {
-        _shopView.DisplayItemDescription(_descriptionManager);
-        _shopView.DisplayUpdatedItemQuantity();
+        var model = shopItem.GetShopModel();
+        model.DecreaseItemQuantity();
+        shopItem.DisplayItemQuantity();
     }
 
     public ShopModel GetShopModel()
