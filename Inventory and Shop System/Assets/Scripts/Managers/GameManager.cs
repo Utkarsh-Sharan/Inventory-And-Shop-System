@@ -33,6 +33,6 @@ public class GameManager : MonoBehaviour
 
     private void InjectDependencies()
     {
-        _shopManager.Init(_descriptionManager);
+        _shopManager.Init(_descriptionManager, _currencyManager);
     }
 }

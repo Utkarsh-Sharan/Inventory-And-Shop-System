@@ -14,8 +14,19 @@ public class CurrencyController : MonoBehaviour
         _currencyView.UpdateCurrency();
     }
 
+    public void ItemPurchased(float value)
+    {
+        _currencyModel.DecrementCurrency(value);
+        _currencyView.UpdateCurrency();
+    }
+
     public CurrencyModel GetCurrencyModel()
     {
         return _currencyModel;
+    }
+
+    public float GetCurrentCurrency()
+    {
+        return _currencyModel.GetCurrentCurrency();
     }
 }
