@@ -1274,6 +1274,7 @@ GameObject:
   - component: {fileID: 743221709}
   - component: {fileID: 743221711}
   - component: {fileID: 743221710}
+  - component: {fileID: 743221712}
   m_Layer: 5
   m_Name: CurrencyPanel
   m_TagString: Untagged
@@ -1339,6 +1340,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 743221708}
   m_CullTransparentMesh: 1
+--- !u!114 &743221712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 743221708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e1d4da8833e59941b3cefba4d5dab65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _currencyView: {fileID: 1337269088}
 --- !u!1 &771146536
 GameObject:
   m_ObjectHideFlags: 0
@@ -2934,6 +2948,7 @@ GameObject:
   - component: {fileID: 1337269085}
   - component: {fileID: 1337269087}
   - component: {fileID: 1337269086}
+  - component: {fileID: 1337269088}
   m_Layer: 5
   m_Name: CurrencyText
   m_TagString: Untagged
@@ -3014,7 +3029,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -3057,6 +3072,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1337269084}
   m_CullTransparentMesh: 1
+--- !u!114 &1337269088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1337269084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35281861b4a3d654698ddb196f9099df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _currencyText: {fileID: 1337269086}
 --- !u!1 &1406895092
 GameObject:
   m_ObjectHideFlags: 0
@@ -5060,6 +5088,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ba826eb3773e45c44a3bde1432aa382e, type: 2}
   - {fileID: 11400000, guid: 2fc9f55bc7895ed419e7599193345327, type: 2}
   _shopController: {fileID: 789641339}
+  _currencyController: {fileID: 743221712}
 --- !u!4 &1988353435
 Transform:
   m_ObjectHideFlags: 0

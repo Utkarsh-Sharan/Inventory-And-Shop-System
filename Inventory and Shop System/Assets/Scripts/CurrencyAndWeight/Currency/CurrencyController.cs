@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class CurrencyController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private CurrencyView _currencyView;
+    private CurrencyModel _currencyModel;
+
+    public void Initialize()
     {
-        
+        _currencyModel = new CurrencyModel();
+        _currencyView.SetController(this);
+        _currencyView.UpdateCurrency();
     }
 
-    // Update is called once per frame
-    void Update()
+    public CurrencyModel GetCurrencyModel()
     {
-        
+        return _currencyModel;
     }
 }
