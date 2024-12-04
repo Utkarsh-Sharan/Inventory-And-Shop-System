@@ -24,20 +24,20 @@ public class ShopModel
     {
         switch (ItemDataSO.itemType)
         {
-            case ItemType.ARMOR:        //make constants for strings
-                return "Armor";
+            case ItemType.ARMOR:
+                return StringConstants.armorString;
 
             case ItemType.HELMET:
-                return "Helmet";
+                return StringConstants.helmetString;
 
             case ItemType.WEAPON:
-                return "Weapon";
+                return StringConstants.weaponString;
 
             case ItemType.HEALABLE:
-                return "Healable";
+                return StringConstants.healableString;
 
             case ItemType.RING:
-                return "Ring";
+                return StringConstants.ringString;
         }
         return null;
     }
@@ -47,16 +47,16 @@ public class ShopModel
         switch (ItemDataSO.itemRarity)
         {
             case ItemRarity.COMMON:
-                return "Common";
+                return StringConstants.commonRarityString;
 
             case ItemRarity.RARE:
-                return "Rare";
+                return StringConstants.rareRarityString;
 
             case ItemRarity.EPIC:
-                return "Epic";
+                return StringConstants.epicRarityString;
 
             case ItemRarity.LEGENDARY:
-                return "Legendary";
+                return StringConstants.legendaryRarityString;
         }
         return null;
     }
