@@ -1,18 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class WeightView : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private TextMeshProUGUI _weightText;
+    private WeightController _weightController;
+
+    public void SetController(WeightController weightController)
     {
-        
+        _weightController = weightController;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void UpdateWeight()
     {
-        
+        _weightText.text = $"Current weight : {_weightController.GetWeightModel().GetCurrentWeight()} kg";
     }
 }

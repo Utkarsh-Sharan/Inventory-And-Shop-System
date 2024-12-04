@@ -1,18 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class WeightManager : MonoBehaviour
+public class WeightManager
 {
-    // Start is called before the first frame update
-    void Start()
+    private WeightController _weightController;
+
+    public WeightManager(WeightController weightController)
     {
-        
+        _weightController = weightController;
+        _weightController.Initialize();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ItemPurchased(float value)
     {
-        
+        _weightController.ItemPurchased(value);
+    }
+
+    public float GetRemainingWeight()
+    {
+        return _weightController.GetRemainingWeight();
     }
 }

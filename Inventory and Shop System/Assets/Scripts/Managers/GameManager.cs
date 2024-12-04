@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     [Header("Managers(or Services)")]
     private ShopManager _shopManager;
     private CurrencyManager _currencyManager;
+    private WeightManager _weightManager;
     [SerializeField] private DescriptionManager _descriptionManager;
 
     [Header("ShopManager fields")]
@@ -19,6 +20,9 @@ public class GameManager : MonoBehaviour
     [Header("CurrencyManager fields")]
     [SerializeField] private CurrencyController _currencyController;
 
+    [Header("WeightManager fields")]
+    [SerializeField] private WeightController _weightController;
+
     private void Start()
     {
         CreateManagers();
@@ -29,10 +33,11 @@ public class GameManager : MonoBehaviour
     {
         _shopManager = new ShopManager(_shopPanel, _shopItemPrefab, _shopItems, _shopController);
         _currencyManager = new CurrencyManager(_currencyController);
+        _weightManager = new WeightManager(_weightController);
     }
 
     private void InjectDependencies()
     {
-        _shopManager.Init(_descriptionManager, _currencyManager);
+        _shopManager.Init(_descriptionManager, _currencyManager, _weightManager);
     }
 }

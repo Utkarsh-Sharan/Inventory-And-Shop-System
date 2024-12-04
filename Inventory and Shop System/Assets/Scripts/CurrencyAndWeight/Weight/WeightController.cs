@@ -4,15 +4,29 @@ using UnityEngine;
 
 public class WeightController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private WeightView _weightView;
+    private WeightModel _weightModel;
+
+    public void Initialize()
     {
-        
+        _weightModel = new WeightModel();
+        _weightView.SetController(this);
+        _weightView.UpdateWeight();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ItemPurchased(float value)
     {
-        
+        _weightModel.IncrementWeight(value);
+        _weightView.UpdateWeight();
+    }
+
+    public WeightModel GetWeightModel()
+    {
+        return _weightModel;
+    }
+
+    public float GetRemainingWeight()
+    {
+        return _weightModel.GetRemainingWeight();
     }
 }

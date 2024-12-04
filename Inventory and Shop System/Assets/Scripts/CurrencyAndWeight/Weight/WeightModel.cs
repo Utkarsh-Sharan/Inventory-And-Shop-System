@@ -1,18 +1,31 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class WeightModel : MonoBehaviour
+public class WeightModel
 {
-    // Start is called before the first frame update
-    void Start()
+    private float _initialWeight = 0f;
+    private float _currentWeight;
+    private float _weightLimit = 15f;
+
+    public WeightModel()
     {
-        
+        _currentWeight = _initialWeight;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void IncrementWeight(float value)
     {
-        
+        _currentWeight += value;
+    }
+
+    public void DecrementWeight(float value)
+    {
+        _currentWeight -= value;
+    }
+
+    public float GetCurrentWeight()
+    {
+        return _currentWeight;
+    }
+
+    public float GetRemainingWeight()
+    {
+        return (_weightLimit - _currentWeight);
     }
 }

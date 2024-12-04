@@ -8,11 +8,13 @@ public class ShopController : MonoBehaviour
     private ShopModel _shopModel;
     private DescriptionManager _descriptionManager;
     private CurrencyManager _currencyManager;
+    private WeightManager _weightManager;
 
-    public void Init(DescriptionManager descriptionManager, CurrencyManager currencyManager)
+    public void Init(DescriptionManager descriptionManager, CurrencyManager currencyManager, WeightManager weightManager)
     {
         _descriptionManager = descriptionManager;
         _currencyManager = currencyManager;
+        _weightManager = weightManager;
     }
 
     public void Initialize(Transform shopPanel, GameObject shopItemPrefab, List<ItemDataScriptableObject> shopItems)
@@ -46,22 +48,28 @@ public class ShopController : MonoBehaviour
     {
         var model = shopItem.GetShopModel();
 
-        if(CheckItemPrice(model) && CheckItemQuantity(model))
+        if(IsItemPurchasable(model) && IsItemAvailable(model) && IsItemWeightInLimit(model))
         {
             _currencyManager.ItemPurchased(model.ItemDataSO.buyingPrice);
+            _weightManager.ItemPurchased(model.ItemDataSO.weight);
             model.DecreaseItemQuantity();
             shopItem.DisplayItemQuantity();
         }
     }
 
-    private bool CheckItemPrice(ShopModel model)
+    private bool IsItemPurchasable(ShopModel model)
     {
         return model.ItemDataSO.buyingPrice <= _currencyManager.GetCurrentCurrency();
     }
 
-    private bool CheckItemQuantity(ShopModel model)
+    private bool IsItemAvailable(ShopModel model)
     {
         return model.GetItemQuantity() > 0;
+    }
+
+    private bool IsItemWeightInLimit(ShopModel model)
+    {
+        return model.ItemDataSO.weight <= _weightManager.GetRemainingWeight();
     }
 
     public ShopModel GetShopModel()
