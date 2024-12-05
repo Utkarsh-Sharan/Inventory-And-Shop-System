@@ -30,21 +30,21 @@ public class ShopController : MonoBehaviour
         }
     }
 
-    public void OnPointerEnter(ShopItem shopItem)
+    public void DescribeItem(ShopItem shopItem)
     {
         ShopModel model = shopItem.GetShopModel();
 
-        _descriptionManager?.ItemDescription
+        _descriptionManager.ItemDescription
         (
-            model.CheckItemType(),
+            model.GetItemType(),
             model.ItemDataSO.buyingPrice,
             model.ItemDataSO.sellingPrice,
             model.ItemDataSO.weight,
-            model.CheckItemRarity()
+            model.GetItemRarity()
         );
     }
 
-    public void OnPointerDown(ShopItem shopItem)
+    public void PurchaseItem(ShopItem shopItem)
     {
         var model = shopItem.GetShopModel();
 
@@ -70,10 +70,5 @@ public class ShopController : MonoBehaviour
     private bool IsItemWeightInLimit(ShopModel model)
     {
         return model.ItemDataSO.weight <= _weightManager.GetRemainingWeight();
-    }
-
-    public ShopModel GetShopModel()
-    {
-        return _shopModel;
     }
 }

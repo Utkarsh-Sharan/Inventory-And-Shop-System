@@ -6,10 +6,10 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [Header("Managers(or Services)")]
+    [SerializeField] private DescriptionManager _descriptionManager;
     private ShopManager _shopManager;
     private CurrencyManager _currencyManager;
     private WeightManager _weightManager;
-    [SerializeField] private DescriptionManager _descriptionManager;
 
     [Header("ShopManager fields")]
     [SerializeField] private Transform _shopPanel;
