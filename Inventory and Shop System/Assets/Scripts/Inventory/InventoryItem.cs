@@ -33,14 +33,14 @@ public class InventoryItem : MonoBehaviour, IPointerDownHandler, IPointerEnterHa
         _itemQuantityText.text = _inventoryModel.GetItemQuantity().ToString();
     }
 
-    public void OnPointerDown(PointerEventData eventData)
-    {
-        throw new System.NotImplementedException();
-    }
-
     public void OnPointerEnter(PointerEventData eventData)
     {
-        throw new System.NotImplementedException();
+        _inventoryController.DescribeItem(this);
+    }
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        _inventoryController.RemoveItemFromInventory(this);
     }
 
     public InventoryModel GetInventoryModel()

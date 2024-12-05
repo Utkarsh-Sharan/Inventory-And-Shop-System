@@ -9,12 +9,14 @@ public class ShopController : MonoBehaviour
     private DescriptionManager _descriptionManager;
     private CurrencyManager _currencyManager;
     private WeightManager _weightManager;
+    private InventoryManager _inventoryManager;
 
-    public void Init(DescriptionManager descriptionManager, CurrencyManager currencyManager, WeightManager weightManager)
+    public void Init(DescriptionManager descriptionManager, CurrencyManager currencyManager, WeightManager weightManager, InventoryManager inventoryManager)
     {
         _descriptionManager = descriptionManager;
         _currencyManager = currencyManager;
         _weightManager = weightManager;
+        _inventoryManager = inventoryManager;
     }
 
     public void Initialize(Transform shopPanel, GameObject shopItemPrefab, List<ItemDataScriptableObject> shopItems)
@@ -54,6 +56,8 @@ public class ShopController : MonoBehaviour
             _weightManager.ItemPurchased(model.ItemDataSO.weight);
             model.DecreaseItemQuantity();
             shopItem.DisplayItemQuantity();
+
+            _inventoryManager.AddItemToInventory(model.ItemDataSO);
         }
     }
 

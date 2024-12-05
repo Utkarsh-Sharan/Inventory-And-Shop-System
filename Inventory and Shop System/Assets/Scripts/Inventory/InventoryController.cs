@@ -25,6 +25,20 @@ public class InventoryController : MonoBehaviour
         _inventoryItemPrefab = inventoryItemPrefab;
     }
 
+    public void DescribeItem(InventoryItem inventoryItem)
+    {
+        InventoryModel model = inventoryItem.GetInventoryModel();
+
+        _descriptionManager.ItemDescription
+        (
+            model.GetItemType(),
+            model.ItemDataSO.buyingPrice,
+            model.ItemDataSO.sellingPrice,
+            model.ItemDataSO.weight,
+            model.GetItemRarity()
+        );
+    }
+
     public void AddItemToInventory(ItemDataScriptableObject itemData)
     {
         var key = (itemData.itemType, itemData.itemRarity);

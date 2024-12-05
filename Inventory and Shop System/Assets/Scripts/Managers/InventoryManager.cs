@@ -20,4 +20,9 @@ public class InventoryManager
         _inventoryController.Init(descriptionManager, currencyManager, weightManager);
         _inventoryController.Initialize(_inventoryPanel, _inventoryItemPrefab);
     }
+
+    public void AddItemToInventory(ItemDataScriptableObject itemData)
+    {
+        _inventoryController.AddItemToInventory(itemData);
+    }
 }
