@@ -2,17 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InventoryManager : MonoBehaviour
+public class InventoryManager
 {
-    // Start is called before the first frame update
-    void Start()
+    private Transform _inventoryPanel;
+    private GameObject _inventoryItemPrefab;
+    private InventoryController _inventoryController;
+
+    public InventoryManager(Transform inventoryPanel, GameObject inventoryItemPrefab, InventoryController inventoryController)
     {
-        
+        _inventoryPanel = inventoryPanel;
+        _inventoryItemPrefab = inventoryItemPrefab;
+        _inventoryController = inventoryController;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Init(DescriptionManager descriptionManager, CurrencyManager currencyManager, WeightManager weightManager)
     {
-        
+        _inventoryController.Init(descriptionManager, currencyManager, weightManager);
+        _inventoryController.Initialize(_inventoryPanel, _inventoryItemPrefab);
     }
 }

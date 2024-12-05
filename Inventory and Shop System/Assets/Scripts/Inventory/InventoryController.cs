@@ -8,6 +8,17 @@ public class InventoryController : MonoBehaviour
     private Transform _inventoryPanel;
     private GameObject _inventoryItemPrefab;
 
+    private DescriptionManager _descriptionManager;
+    private CurrencyManager _currencyManager;
+    private WeightManager _weightManager;
+
+    public void Init(DescriptionManager descriptionManager, CurrencyManager currencyManager, WeightManager weightManager)
+    {
+        _descriptionManager = descriptionManager;
+        _currencyManager = currencyManager;
+        _weightManager = weightManager;
+    }
+
     public void Initialize(Transform inventoryPanel, GameObject inventoryItemPrefab)
     {
         _inventoryPanel = inventoryPanel;
