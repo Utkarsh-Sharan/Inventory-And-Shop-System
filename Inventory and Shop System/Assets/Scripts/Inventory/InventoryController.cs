@@ -5,18 +5,21 @@ using UnityEngine;
 public class InventoryController : MonoBehaviour
 {
     private Dictionary<(ItemType, ItemRarity), InventoryModel> _inventoryItems = new();
+    private Dictionary<(ItemType, ItemRarity), InventoryItem> _inventoryItemsQuantityUI = new();
     private Transform _inventoryPanel;
     private GameObject _inventoryItemPrefab;
 
     private DescriptionManager _descriptionManager;
     private CurrencyManager _currencyManager;
     private WeightManager _weightManager;
+    private ShopManager _shopManager;
 
-    public void Init(DescriptionManager descriptionManager, CurrencyManager currencyManager, WeightManager weightManager)
+    public void Init(DescriptionManager descriptionManager, CurrencyManager currencyManager, WeightManager weightManager, ShopManager shopManager)
     {
         _descriptionManager = descriptionManager;
         _currencyManager = currencyManager;
         _weightManager = weightManager;
+        _shopManager = shopManager;
     }
 
     public void Initialize(Transform inventoryPanel, GameObject inventoryItemPrefab)
@@ -46,6 +49,7 @@ public class InventoryController : MonoBehaviour
         if(_inventoryItems.TryGetValue(key, out InventoryModel model))  //if item already present in inventory, just increase its quantity
         {
             model.IncreaseItemQuantity();
+            _inventoryItemsQuantityUI[key].UpdateItemQuantity();
         }
         else                                                            //else add item to the inventory
         {
@@ -55,10 +59,12 @@ public class InventoryController : MonoBehaviour
             var inventoryItemObject = Instantiate(_inventoryItemPrefab, _inventoryPanel);
             InventoryItem inventoryItem = inventoryItemObject.GetComponent<InventoryItem>();
             inventoryItem.Initialize(newModel, this);
+
+            _inventoryItemsQuantityUI[key] = inventoryItem;
         }
     }
 
-    public void RemoveItemFromInventory(InventoryItem inventoryItem)
+    public void SellItem(InventoryItem inventoryItem)
     {
         InventoryModel model = inventoryItem.GetInventoryModel();
         var key = (model.ItemDataSO.itemType, model.ItemDataSO.itemRarity);
@@ -66,11 +72,17 @@ public class InventoryController : MonoBehaviour
         if(model.DecreaseItemQuantity() <= 0)       //if only 1 item present, remove it from the list and destroy the item
         {
             _inventoryItems.Remove(key);
+            _inventoryItemsQuantityUI.Remove(key);
+
             Destroy(inventoryItem.gameObject);
         }
         else
         {
             inventoryItem.UpdateItemQuantity();     //else update its quantity
         }
+
+        _currencyManager.ItemSold(model.ItemDataSO.sellingPrice);
+        _weightManager.ItemSold(model.ItemDataSO.weight);
+        _shopManager.ItemSold(model.ItemDataSO);
     }
 }

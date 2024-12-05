@@ -20,6 +20,12 @@ public class WeightController : MonoBehaviour
         _weightView.UpdateWeight();
     }
 
+    public void ItemSold(float value)
+    {
+        _weightModel.DecrementWeight(value);
+        _weightView.UpdateWeight();
+    }
+
     public WeightModel GetWeightModel()
     {
         return _weightModel;

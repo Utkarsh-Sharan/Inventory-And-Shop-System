@@ -75,4 +75,9 @@ public class ShopController : MonoBehaviour
     {
         return model.ItemDataSO.weight <= _weightManager.GetRemainingWeight();
     }
+
+    public void IncreaseItemQuantity(ItemDataScriptableObject itemData)
+    {
+        
+    }
 }

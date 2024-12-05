@@ -16,6 +16,11 @@ public class ShopModel
         --_quantity;
     }
 
+    public void IncreaseItemQuantity()
+    {
+        ++_quantity;
+    }
+
     public int GetItemQuantity()
     {
         return _quantity;

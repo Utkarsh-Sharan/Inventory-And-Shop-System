@@ -40,7 +40,7 @@ public class InventoryItem : MonoBehaviour, IPointerDownHandler, IPointerEnterHa
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        _inventoryController.RemoveItemFromInventory(this);
+        _inventoryController.SellItem(this);
     }
 
     public InventoryModel GetInventoryModel()

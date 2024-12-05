@@ -23,4 +23,9 @@ public class ShopManager
         _shopController.Init(descriptionManager, currencyManager, weightManager, inventoryManager);
         _shopController.Initialize(_shopPanel, _shopItemPrefab, _shopItems);
     }
+
+    public void ItemSold(ItemDataScriptableObject itemData)
+    {
+        _shopController.IncreaseItemQuantity(itemData);
+    }
 }
