@@ -1,18 +1,50 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-public class InventoryItem : MonoBehaviour
+public class InventoryItem : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private Image _itemImage;
+    [SerializeField] private Image _rarityBackgroundImage;
+    [SerializeField] private TextMeshProUGUI _itemQuantityText;
+
+    private InventoryModel _inventoryModel;
+    private InventoryController _inventoryController;
+
+    public void Initialize(InventoryModel inventoryModel, InventoryController inventoryController)
     {
-        
+        _inventoryModel = inventoryModel;
+        _inventoryController = inventoryController;
+        UpdateItemImageRarityAndQuantity();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void UpdateItemImageRarityAndQuantity()
     {
-        
+        _itemImage.sprite = _inventoryModel.ItemDataSO.itemImage;
+        _rarityBackgroundImage.sprite = _inventoryModel.ItemDataSO.rarityBackgroundImage;
+        UpdateItemQuantity();
+    }
+
+    public void UpdateItemQuantity()
+    {
+        _itemQuantityText.text = _inventoryModel.GetItemQuantity().ToString();
+    }
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public InventoryModel GetInventoryModel()
+    {
+        return _inventoryModel;
     }
 }
