@@ -39,12 +39,12 @@ public class ShopItem : MonoBehaviour, IPointerEnterHandler, IPointerDownHandler
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        _shopController?.OnPointerEnter(this);
+        _shopController.DescribeItem(this);
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        _shopController?.OnPointerDown(this);
+        _shopController.PurchaseItem(this);
     }
 
     public ShopModel GetShopModel()

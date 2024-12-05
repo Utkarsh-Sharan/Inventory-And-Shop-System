@@ -10,9 +10,6 @@ public class ShopManager
     private List<ItemDataScriptableObject> _shopItems;
     private ShopController _shopController;
     
-    //Dependencies
-    private DescriptionManager _descriptionManager;
-
     public ShopManager(Transform shopPanel, GameObject shopItemPrefab, List<ItemDataScriptableObject> shopItems, ShopController shopController)
     {
         _shopPanel = shopPanel;
@@ -21,9 +18,9 @@ public class ShopManager
         _shopController = shopController;
     }
 
-    public void Init(DescriptionManager descriptionManager)
+    public void Init(DescriptionManager descriptionManager, CurrencyManager currencyManager, WeightManager weightManager)
     {
-        _descriptionManager = descriptionManager;
-        _shopController.Initialize(_shopPanel, _shopItemPrefab, _shopItems, _descriptionManager);
+        _shopController.Init(descriptionManager, currencyManager, weightManager);
+        _shopController.Initialize(_shopPanel, _shopItemPrefab, _shopItems);
     }
 }

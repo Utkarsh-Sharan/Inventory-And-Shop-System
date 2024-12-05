@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class ShopModel
 {
     public ItemDataScriptableObject ItemDataSO { get; private set; }
@@ -11,8 +13,7 @@ public class ShopModel
 
     public void DecreaseItemQuantity()
     {
-        if(_quantity > 0)
-            --_quantity;
+        --_quantity;
     }
 
     public int GetItemQuantity()
@@ -20,7 +21,7 @@ public class ShopModel
         return _quantity;
     }
 
-    public string CheckItemType()
+    public string GetItemType()
     {
         switch (ItemDataSO.itemType)
         {
@@ -38,11 +39,15 @@ public class ShopModel
 
             case ItemType.RING:
                 return StringConstants.ringString;
+
+            default:
+                Debug.LogError("Item type does not exist!");
+                break;
         }
         return null;
     }
 
-    public string CheckItemRarity()
+    public string GetItemRarity()
     {
         switch (ItemDataSO.itemRarity)
         {
@@ -57,6 +62,10 @@ public class ShopModel
 
             case ItemRarity.LEGENDARY:
                 return StringConstants.legendaryRarityString;
+
+            default:
+                Debug.LogError("Rarity does not exist!");
+                break;
         }
         return null;
     }

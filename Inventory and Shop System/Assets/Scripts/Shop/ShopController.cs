@@ -7,11 +7,18 @@ public class ShopController : MonoBehaviour
 {
     private ShopModel _shopModel;
     private DescriptionManager _descriptionManager;
+    private CurrencyManager _currencyManager;
+    private WeightManager _weightManager;
 
-    public void Initialize(Transform shopPanel, GameObject shopItemPrefab, List<ItemDataScriptableObject> shopItems, DescriptionManager descriptionManager)
+    public void Init(DescriptionManager descriptionManager, CurrencyManager currencyManager, WeightManager weightManager)
     {
         _descriptionManager = descriptionManager;
-        
+        _currencyManager = currencyManager;
+        _weightManager = weightManager;
+    }
+
+    public void Initialize(Transform shopPanel, GameObject shopItemPrefab, List<ItemDataScriptableObject> shopItems)
+    {
         foreach(var itemData in shopItems )
         {
             var shopItemObject = Instantiate(shopItemPrefab, shopPanel);
@@ -23,29 +30,45 @@ public class ShopController : MonoBehaviour
         }
     }
 
-    public void OnPointerEnter(ShopItem shopItem)
+    public void DescribeItem(ShopItem shopItem)
     {
         ShopModel model = shopItem.GetShopModel();
 
-        _descriptionManager?.ItemDescription
+        _descriptionManager.ItemDescription
         (
-            model.CheckItemType(),
+            model.GetItemType(),
             model.ItemDataSO.buyingPrice,
             model.ItemDataSO.sellingPrice,
             model.ItemDataSO.weight,
-            model.CheckItemRarity()
+            model.GetItemRarity()
         );
     }
 
-    public void OnPointerDown(ShopItem shopItem)
+    public void PurchaseItem(ShopItem shopItem)
     {
         var model = shopItem.GetShopModel();
-        model.DecreaseItemQuantity();
-        shopItem.DisplayItemQuantity();
+
+        if(IsItemPurchasable(model) && IsItemAvailable(model) && IsItemWeightInLimit(model))
+        {
+            _currencyManager.ItemPurchased(model.ItemDataSO.buyingPrice);
+            _weightManager.ItemPurchased(model.ItemDataSO.weight);
+            model.DecreaseItemQuantity();
+            shopItem.DisplayItemQuantity();
+        }
     }
 
-    public ShopModel GetShopModel()
+    private bool IsItemPurchasable(ShopModel model)
     {
-        return _shopModel;
+        return model.ItemDataSO.buyingPrice <= _currencyManager.GetCurrentCurrency();
+    }
+
+    private bool IsItemAvailable(ShopModel model)
+    {
+        return model.GetItemQuantity() > 0;
+    }
+
+    private bool IsItemWeightInLimit(ShopModel model)
+    {
+        return model.ItemDataSO.weight <= _weightManager.GetRemainingWeight();
     }
 }

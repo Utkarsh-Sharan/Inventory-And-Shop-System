@@ -17,6 +17,6 @@ MonoBehaviour:
   itemType: 1
   buyingPrice: 500
   sellingPrice: 250
-  weight: 50
+  weight: 4
   itemRarity: 3
   itemInitialQuantity: 1
