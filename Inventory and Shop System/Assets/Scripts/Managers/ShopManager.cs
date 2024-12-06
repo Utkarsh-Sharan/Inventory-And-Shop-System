@@ -26,6 +26,6 @@ public class ShopManager
 
     public void ItemSold(ItemDataScriptableObject itemData)
     {
-        _shopController.IncreaseItemQuantity(itemData);
+        _shopController.RestockShopItem(itemData);
     }
 }

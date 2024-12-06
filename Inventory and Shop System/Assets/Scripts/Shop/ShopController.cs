@@ -5,7 +5,11 @@ using UnityEngine.EventSystems;
 
 public class ShopController : MonoBehaviour
 {
+    private Dictionary<(ItemType, ItemRarity), ShopModel> _shopItems = new();
+    private Dictionary<(ItemType, ItemRarity), ShopItem> _shopItemsQuantityUI = new();
+
     private ShopModel _shopModel;
+
     private DescriptionManager _descriptionManager;
     private CurrencyManager _currencyManager;
     private WeightManager _weightManager;
@@ -23,9 +27,14 @@ public class ShopController : MonoBehaviour
     {
         foreach(var itemData in shopItems )
         {
+            var key = (itemData.itemType, itemData.itemRarity);
+
             var shopItemObject = Instantiate(shopItemPrefab, shopPanel);
             ShopItem shopItem = shopItemObject.GetComponent<ShopItem>();
             ShopModel shopModel = new ShopModel(itemData);
+
+            _shopItems[key] = shopModel;
+            _shopItemsQuantityUI[key] = shopItem;
 
             shopItem.SetShopController(this);
             shopItem.Initialize(shopModel);
@@ -44,6 +53,17 @@ public class ShopController : MonoBehaviour
             model.ItemDataSO.weight,
             model.GetItemRarity()
         );
+    }
+
+    public void RestockShopItem(ItemDataScriptableObject itemData)
+    {
+        var key = (itemData.itemType, itemData.itemRarity);
+
+        if(_shopItems.TryGetValue(key, out ShopModel model))
+        {
+            model.IncreaseItemQuantity();
+            _shopItemsQuantityUI[key].DisplayItemQuantity();
+        }
     }
 
     public void PurchaseItem(ShopItem shopItem)
@@ -74,10 +94,5 @@ public class ShopController : MonoBehaviour
     private bool IsItemWeightInLimit(ShopModel model)
     {
         return model.ItemDataSO.weight <= _weightManager.GetRemainingWeight();
-    }
-
-    public void IncreaseItemQuantity(ItemDataScriptableObject itemData)
-    {
-        
     }
 }

@@ -6,6 +6,7 @@ public class InventoryController : MonoBehaviour
 {
     private Dictionary<(ItemType, ItemRarity), InventoryModel> _inventoryItems = new();
     private Dictionary<(ItemType, ItemRarity), InventoryItem> _inventoryItemsQuantityUI = new();
+
     private Transform _inventoryPanel;
     private GameObject _inventoryItemPrefab;
 
