@@ -1,29 +1,24 @@
 using UnityEngine;
 
-public class ShopModel
+public class InventoryModel
 {
     public ItemDataScriptableObject ItemDataSO { get; private set; }
     private int _quantity;
 
-    public ShopModel(ItemDataScriptableObject itemDataSO)
+    public InventoryModel(ItemDataScriptableObject itemDataSO)
     {
         ItemDataSO = itemDataSO;
-        _quantity = ItemDataSO.itemInitialQuantity;
+        _quantity = 1;
     }
 
-    public void DecreaseItemQuantity()
+    public int IncreaseItemQuantity()
     {
-        --_quantity;
+        return ++_quantity;
     }
 
-    public void IncreaseItemQuantity()
+    public int DecreaseItemQuantity()
     {
-        ++_quantity;
-    }
-
-    public int GetItemQuantity()
-    {
-        return _quantity;
+        return --_quantity;
     }
 
     public string GetItemType()
@@ -73,5 +68,10 @@ public class ShopModel
                 break;
         }
         return null;
+    }
+
+    public int GetItemQuantity()
+    {
+        return _quantity;
     }
 }

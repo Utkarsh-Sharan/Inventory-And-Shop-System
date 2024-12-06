@@ -5,25 +5,36 @@ using UnityEngine.EventSystems;
 
 public class ShopController : MonoBehaviour
 {
+    private Dictionary<(ItemType, ItemRarity), ShopModel> _shopItems = new();
+    private Dictionary<(ItemType, ItemRarity), ShopItem> _shopItemsQuantityUI = new();
+
     private ShopModel _shopModel;
+
     private DescriptionManager _descriptionManager;
     private CurrencyManager _currencyManager;
     private WeightManager _weightManager;
+    private InventoryManager _inventoryManager;
 
-    public void Init(DescriptionManager descriptionManager, CurrencyManager currencyManager, WeightManager weightManager)
+    public void Init(DescriptionManager descriptionManager, CurrencyManager currencyManager, WeightManager weightManager, InventoryManager inventoryManager)
     {
         _descriptionManager = descriptionManager;
         _currencyManager = currencyManager;
         _weightManager = weightManager;
+        _inventoryManager = inventoryManager;
     }
 
     public void Initialize(Transform shopPanel, GameObject shopItemPrefab, List<ItemDataScriptableObject> shopItems)
     {
         foreach(var itemData in shopItems )
         {
+            var key = (itemData.itemType, itemData.itemRarity);
+
             var shopItemObject = Instantiate(shopItemPrefab, shopPanel);
             ShopItem shopItem = shopItemObject.GetComponent<ShopItem>();
             ShopModel shopModel = new ShopModel(itemData);
+
+            _shopItems[key] = shopModel;
+            _shopItemsQuantityUI[key] = shopItem;
 
             shopItem.SetShopController(this);
             shopItem.Initialize(shopModel);
@@ -44,6 +55,17 @@ public class ShopController : MonoBehaviour
         );
     }
 
+    public void RestockShopItem(ItemDataScriptableObject itemData)
+    {
+        var key = (itemData.itemType, itemData.itemRarity);
+
+        if(_shopItems.TryGetValue(key, out ShopModel model))
+        {
+            model.IncreaseItemQuantity();
+            _shopItemsQuantityUI[key].DisplayItemQuantity();
+        }
+    }
+
     public void PurchaseItem(ShopItem shopItem)
     {
         var model = shopItem.GetShopModel();
@@ -54,6 +76,8 @@ public class ShopController : MonoBehaviour
             _weightManager.ItemPurchased(model.ItemDataSO.weight);
             model.DecreaseItemQuantity();
             shopItem.DisplayItemQuantity();
+
+            _inventoryManager.AddItemToInventory(model.ItemDataSO);
         }
     }
 

@@ -20,6 +20,12 @@ public class CurrencyController : MonoBehaviour
         _currencyView.UpdateCurrency();
     }
 
+    public void ItemSold(float value)
+    {
+        _currencyModel.IncrementCurrency(value);
+        _currencyView.UpdateCurrency();
+    }
+
     public CurrencyModel GetCurrencyModel()
     {
         return _currencyModel;

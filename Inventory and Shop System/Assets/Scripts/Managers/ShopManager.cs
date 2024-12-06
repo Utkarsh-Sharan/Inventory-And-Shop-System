@@ -18,9 +18,14 @@ public class ShopManager
         _shopController = shopController;
     }
 
-    public void Init(DescriptionManager descriptionManager, CurrencyManager currencyManager, WeightManager weightManager)
+    public void Init(DescriptionManager descriptionManager, CurrencyManager currencyManager, WeightManager weightManager, InventoryManager inventoryManager)
     {
-        _shopController.Init(descriptionManager, currencyManager, weightManager);
+        _shopController.Init(descriptionManager, currencyManager, weightManager, inventoryManager);
         _shopController.Initialize(_shopPanel, _shopItemPrefab, _shopItems);
+    }
+
+    public void ItemSold(ItemDataScriptableObject itemData)
+    {
+        _shopController.RestockShopItem(itemData);
     }
 }

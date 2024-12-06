@@ -13,6 +13,11 @@ public class WeightManager
         _weightController.ItemPurchased(value);
     }
 
+    public void ItemSold(float value)
+    {
+        _weightController.ItemSold(value);
+    }
+
     public float GetRemainingWeight()
     {
         return _weightController.GetRemainingWeight();
