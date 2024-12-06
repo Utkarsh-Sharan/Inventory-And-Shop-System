@@ -22,11 +22,8 @@ public class WeightController : MonoBehaviour
 
     public void ItemSold(float value)
     {
-        if(_weightModel.GetCurrentWeight() > 0)
-        {
-            _weightModel.DecrementWeight(value);
-            _weightView.UpdateWeight();
-        }
+        _weightModel.DecrementWeight(value);
+        _weightView.UpdateWeight();
     }
 
     public WeightModel GetWeightModel()
