@@ -22,4 +22,9 @@ public class WeightManager
     {
         return _weightController.GetRemainingWeight();
     }
+
+    public bool CanAddWeight(float value)
+    {
+        return _weightController.CanAddWeight(value);
+    }
 }

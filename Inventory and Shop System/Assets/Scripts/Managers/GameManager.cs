@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     private InventoryManager _inventoryManager;
     private CurrencyManager _currencyManager;
     private WeightManager _weightManager;
+    private ItemGenerationManager _itemGenerationManager;
 
     [Header("ShopManager fields")]
     [SerializeField] private Transform _shopPanel;
@@ -29,6 +30,9 @@ public class GameManager : MonoBehaviour
     [Header("WeightManager fields")]
     [SerializeField] private WeightController _weightController;
 
+    [Header("ItemGenerationManager fields")]
+    [SerializeField] private RandomItemGenerator _randomItemGenerator;
+
     private void Start()
     {
         CreateManagers();
@@ -41,11 +45,13 @@ public class GameManager : MonoBehaviour
         _currencyManager = new CurrencyManager(_currencyController);
         _weightManager = new WeightManager(_weightController);
         _inventoryManager = new InventoryManager(_inventoryPanel, _inventoryItemPrefab, _inventoryController);
+        _itemGenerationManager = new ItemGenerationManager(_shopItems, _randomItemGenerator);
     }
 
     private void InjectDependencies()
     {
         _shopManager.Init(_descriptionManager, _currencyManager, _weightManager, _inventoryManager);
         _inventoryManager.Init(_descriptionManager, _currencyManager, _weightManager, _shopManager);
+        _itemGenerationManager.Init(_inventoryManager);
     }
 }

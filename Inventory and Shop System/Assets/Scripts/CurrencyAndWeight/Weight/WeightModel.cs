@@ -42,4 +42,9 @@ public class WeightModel
     {
         return (_weightLimit - _currentWeight);
     }
+
+    public float GetWeightLimit()
+    {
+        return _weightLimit;
+    }
 }

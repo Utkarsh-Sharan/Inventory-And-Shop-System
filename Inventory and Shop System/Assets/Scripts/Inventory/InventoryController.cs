@@ -43,6 +43,23 @@ public class InventoryController : MonoBehaviour
         );
     }
 
+    public void GenerateRandomItems(List<ItemDataScriptableObject> availableItems, int minItems = 4, int maxItems = 5)
+    {
+        int itemCount = Random.Range(minItems, maxItems + 1);
+
+        for (int i = 0; i < itemCount; ++i)
+        {
+            var randomItem = availableItems[Random.Range(0, availableItems.Count)];
+            float weight = randomItem.weight;
+
+            if (_weightManager.CanAddWeight(weight))
+            {
+                AddItemToInventory(randomItem);
+                _weightManager.ItemPurchased(weight);
+            }
+        }
+    }
+
     public void AddItemToInventory(ItemDataScriptableObject itemData)
     {
         var key = (itemData.itemType, itemData.itemRarity);
