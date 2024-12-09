@@ -1,6 +1,6 @@
 public class CurrencyModel
 {
-    private float _initialCurrency = 1500f;
+    private float _initialCurrency = 0f;
     private float _currentCurrency;
 
     public CurrencyModel()
