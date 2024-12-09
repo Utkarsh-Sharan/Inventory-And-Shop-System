@@ -21,6 +21,11 @@ public class InventoryManager
         _inventoryController.Initialize(_inventoryPanel, _inventoryItemPrefab);
     }
 
+    public void GenerateRandomItems(List<ItemDataScriptableObject> availableItems)
+    {
+        _inventoryController.GenerateRandomItems(availableItems);
+    }
+
     public void AddItemToInventory(ItemDataScriptableObject itemData)
     {
         _inventoryController.AddItemToInventory(itemData);

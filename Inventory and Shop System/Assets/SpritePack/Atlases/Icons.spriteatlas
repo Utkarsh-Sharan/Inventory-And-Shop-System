@@ -96,6 +96,9 @@ SpriteAtlas:
     - 9d4ad9585d881b9469236aa4e598a8b1: 21300000
     - 4a59607811bc1f9459591856511467a5: 21300000
     - e67e11d800ebc144b9a0a05702c468e4: 21300000
+    - 361e4d091d67d4e418276068f8963410: -764179342
+    - 361e4d091d67d4e418276068f8963410: -1017547860
+    - 361e4d091d67d4e418276068f8963410: -1101458619
     - ee0ed61959fdb2a4fa6a6294228f5f47: 21300000
     - 60c1d42986dc0094c808b9e135f31ba2: 21300000
     - 469c2629c08b96944b6e1f3575449d4b: 21300000
@@ -185,6 +188,9 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 9d4ad9585d881b9469236aa4e598a8b1, type: 3}
   - {fileID: 21300000, guid: 4a59607811bc1f9459591856511467a5, type: 3}
   - {fileID: 21300000, guid: e67e11d800ebc144b9a0a05702c468e4, type: 3}
+  - {fileID: -764179342, guid: 361e4d091d67d4e418276068f8963410, type: 3}
+  - {fileID: -1017547860, guid: 361e4d091d67d4e418276068f8963410, type: 3}
+  - {fileID: -1101458619, guid: 361e4d091d67d4e418276068f8963410, type: 3}
   - {fileID: 21300000, guid: ee0ed61959fdb2a4fa6a6294228f5f47, type: 3}
   - {fileID: 21300000, guid: 60c1d42986dc0094c808b9e135f31ba2, type: 3}
   - {fileID: 21300000, guid: 469c2629c08b96944b6e1f3575449d4b, type: 3}
@@ -273,6 +279,9 @@ SpriteAtlas:
   - ManticoreHelmet
   - BanditLightArmor [Paint]
   - GateCrusher
+  - Menu_Designs_2
+  - Menu_Designs_1
+  - Menu_Designs_0
   - HighKnightHelm
   - Apple
   - HardwoodWand

@@ -35,4 +35,9 @@ public class WeightController : MonoBehaviour
     {
         return _weightModel.GetRemainingWeight();
     }
+
+    public bool CanAddWeight(float value)
+    {
+        return _weightModel.GetCurrentWeight() + value <= _weightModel.GetWeightLimit();
+    }
 }
