@@ -15,9 +15,9 @@ public class InventoryManager
         _inventoryController = inventoryController;
     }
 
-    public void Init(DescriptionManager descriptionManager, CurrencyManager currencyManager, WeightManager weightManager, ShopManager shopManager)
+    public void Init(DescriptionManager descriptionManager, CurrencyManager currencyManager, WeightManager weightManager, ShopManager shopManager, AudioManager audioManager)
     {
-        _inventoryController.Init(descriptionManager, currencyManager, weightManager, shopManager);
+        _inventoryController.Init(descriptionManager, currencyManager, weightManager, shopManager, audioManager);
         _inventoryController.Initialize(_inventoryPanel, _inventoryItemPrefab);
     }
 

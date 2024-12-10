@@ -18,9 +18,9 @@ public class ShopManager
         _shopController = shopController;
     }
 
-    public void Init(DescriptionManager descriptionManager, CurrencyManager currencyManager, WeightManager weightManager, InventoryManager inventoryManager)
+    public void Init(DescriptionManager descriptionManager, CurrencyManager currencyManager, WeightManager weightManager, InventoryManager inventoryManager, AudioManager audioManager)
     {
-        _shopController.Init(descriptionManager, currencyManager, weightManager, inventoryManager);
+        _shopController.Init(descriptionManager, currencyManager, weightManager, inventoryManager, audioManager);
         _shopController.Initialize(_shopPanel, _shopItemPrefab, _shopItems);
     }
 

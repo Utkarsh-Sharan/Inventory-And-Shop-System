@@ -2,7 +2,6 @@ using System.Collections.Generic;
 
 public class ItemGenerationManager
 {
-    private InventoryManager _inventoryManager;
     private List<ItemDataScriptableObject> _shopItems;
     private RandomItemGenerator _randomItemGenerator;
 
@@ -12,9 +11,8 @@ public class ItemGenerationManager
         _randomItemGenerator = randomItemGenerator;
     }
 
-    public void Init(InventoryManager inventoryManager)
+    public void Init(InventoryManager inventoryManager, AudioManager audioManager)
     {
-        _inventoryManager = inventoryManager;
-        _randomItemGenerator.Initialize(_inventoryManager, _shopItems);
+        _randomItemGenerator.Initialize(inventoryManager, _shopItems, audioManager);
     }
 }
