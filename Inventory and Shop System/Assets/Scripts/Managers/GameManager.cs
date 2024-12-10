@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
     private void InjectDependencies()
     {
         _shopManager.Init(_descriptionManager, _currencyManager, _weightManager, _inventoryManager, _audioManager);
-        _inventoryManager.Init(_descriptionManager, _currencyManager, _weightManager, _shopManager);
+        _inventoryManager.Init(_descriptionManager, _currencyManager, _weightManager, _shopManager, _audioManager);
         _itemGenerationManager.Init(_inventoryManager, _audioManager);
     }
 }

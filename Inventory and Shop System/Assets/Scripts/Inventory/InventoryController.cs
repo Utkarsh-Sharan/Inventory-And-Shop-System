@@ -14,9 +14,11 @@ public class InventoryController : MonoBehaviour
     private CurrencyManager _currencyManager;
     private WeightManager _weightManager;
     private ShopManager _shopManager;
+    private AudioManager _audioManager;
 
-    public void Init(DescriptionManager descriptionManager, CurrencyManager currencyManager, WeightManager weightManager, ShopManager shopManager)
+    public void Init(DescriptionManager descriptionManager, CurrencyManager currencyManager, WeightManager weightManager, ShopManager shopManager, AudioManager audioManager)
     {
+        _audioManager = audioManager;
         _descriptionManager = descriptionManager;
         _currencyManager = currencyManager;
         _weightManager = weightManager;
@@ -31,6 +33,8 @@ public class InventoryController : MonoBehaviour
 
     public void DescribeItem(InventoryItem inventoryItem)
     {
+        _audioManager.PlaySound(AudioType.ITEM_HOVER);
+
         InventoryModel model = inventoryItem.GetInventoryModel();
 
         _descriptionManager.ItemDescription
@@ -84,6 +88,7 @@ public class InventoryController : MonoBehaviour
 
     public void SellItem(InventoryItem inventoryItem)
     {
+        _audioManager.PlaySound(AudioType.ITEM_CLICKED);
         InventoryModel model = inventoryItem.GetInventoryModel();
         var key = (model.ItemDataSO.itemType, model.ItemDataSO.itemRarity);
 
