@@ -105,4 +105,9 @@ public class ShopController : MonoBehaviour
     {
         return model.ItemDataSO.weight <= _weightManager.GetRemainingWeight();
     }
+
+    public Dictionary<(ItemType, ItemRarity), ShopItem> GetShopItems()
+    {
+        return _shopItemsQuantityUI;
+    }
 }

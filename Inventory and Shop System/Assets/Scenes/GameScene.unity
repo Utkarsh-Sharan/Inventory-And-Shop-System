@@ -512,7 +512,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 399812531}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 554871114}
+        m_TargetAssemblyTypeName: ShopView, Assembly-CSharp
+        m_MethodName: ShowArmorItems
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &399812531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -743,7 +755,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 519157985}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 554871114}
+        m_TargetAssemblyTypeName: ShopView, Assembly-CSharp
+        m_MethodName: ShowWeaponItems
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &519157985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -886,6 +910,7 @@ GameObject:
   - component: {fileID: 554871112}
   - component: {fileID: 554871111}
   - component: {fileID: 554871113}
+  - component: {fileID: 554871114}
   m_Layer: 5
   m_Name: ShopItemsParentPanel
   m_TagString: Untagged
@@ -974,6 +999,18 @@ MonoBehaviour:
   m_Spacing: {x: 120, y: 30}
   m_Constraint: 1
   m_ConstraintCount: 4
+--- !u!114 &554871114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554871109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8bde61605796e0438fb0d7787086ffd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &662615673
 GameObject:
   m_ObjectHideFlags: 0
@@ -1056,7 +1093,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 662615676}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 554871114}
+        m_TargetAssemblyTypeName: ShopView, Assembly-CSharp
+        m_MethodName: ShowHelmetItems
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &662615676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2821,7 +2870,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1365913894}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 554871114}
+        m_TargetAssemblyTypeName: ShopView, Assembly-CSharp
+        m_MethodName: ShowAllItems
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1365913894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2942,7 +3003,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1366336486}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 554871114}
+        m_TargetAssemblyTypeName: ShopView, Assembly-CSharp
+        m_MethodName: ShowHealableItems
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1366336486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3265,7 +3338,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1540887327}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 554871114}
+        m_TargetAssemblyTypeName: ShopView, Assembly-CSharp
+        m_MethodName: ShowRingItems
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1540887327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4300,6 +4385,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ba826eb3773e45c44a3bde1432aa382e, type: 2}
   - {fileID: 11400000, guid: 2fc9f55bc7895ed419e7599193345327, type: 2}
   _shopController: {fileID: 789641339}
+  _shopView: {fileID: 554871114}
   _inventoryPanel: {fileID: 1671669703}
   _inventoryItemPrefab: {fileID: 8189431556608630819, guid: 9043abb0c41d52040a0a63025c96c6da, type: 3}
   _inventoryController: {fileID: 50859647}

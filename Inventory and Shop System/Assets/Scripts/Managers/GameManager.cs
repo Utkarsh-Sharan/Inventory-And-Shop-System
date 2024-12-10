@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _shopItemPrefab;
     [SerializeField] private List<ItemDataScriptableObject> _shopItems;
     [SerializeField] private ShopController _shopController;
+    [SerializeField] private ShopView _shopView;
 
     [Header("InventoryManager fields")]
     [SerializeField] private Transform _inventoryPanel;
@@ -53,6 +54,8 @@ public class GameManager : MonoBehaviour
         _inventoryManager = new InventoryManager(_inventoryPanel, _inventoryItemPrefab, _inventoryController);
         _itemGenerationManager = new ItemGenerationManager(_shopItems, _randomItemGenerator);
         _audioManager = new AudioManager(_audioController, _audioSO, _audioSource);
+
+        _shopView.Init(_shopController);
     }
 
     private void InjectDependencies()
