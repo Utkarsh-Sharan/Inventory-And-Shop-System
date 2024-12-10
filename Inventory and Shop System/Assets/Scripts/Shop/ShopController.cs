@@ -14,13 +14,15 @@ public class ShopController : MonoBehaviour
     private CurrencyManager _currencyManager;
     private WeightManager _weightManager;
     private InventoryManager _inventoryManager;
+    private AudioManager _audioManager;
 
-    public void Init(DescriptionManager descriptionManager, CurrencyManager currencyManager, WeightManager weightManager, InventoryManager inventoryManager)
+    public void Init(DescriptionManager descriptionManager, CurrencyManager currencyManager, WeightManager weightManager, InventoryManager inventoryManager, AudioManager audioManager)
     {
         _descriptionManager = descriptionManager;
         _currencyManager = currencyManager;
         _weightManager = weightManager;
         _inventoryManager = inventoryManager;
+        _audioManager = audioManager;
     }
 
     public void Initialize(Transform shopPanel, GameObject shopItemPrefab, List<ItemDataScriptableObject> shopItems)
@@ -43,6 +45,8 @@ public class ShopController : MonoBehaviour
 
     public void DescribeItem(ShopItem shopItem)
     {
+        _audioManager.PlaySound(AudioType.ITEM_HOVER);
+
         ShopModel model = shopItem.GetShopModel();
 
         _descriptionManager.ItemDescription
@@ -72,12 +76,18 @@ public class ShopController : MonoBehaviour
 
         if(IsItemPurchasable(model) && IsItemAvailable(model) && IsItemWeightInLimit(model))
         {
+            _audioManager.PlaySound(AudioType.ITEM_CLICKED);
             _currencyManager.ItemPurchased(model.ItemDataSO.buyingPrice);
             _weightManager.ItemPurchased(model.ItemDataSO.weight);
+
             model.DecreaseItemQuantity();
             shopItem.DisplayItemQuantity();
 
             _inventoryManager.AddItemToInventory(model.ItemDataSO);
+        }
+        else
+        {
+            _audioManager.PlaySound(AudioType.ERROR);
         }
     }
 
