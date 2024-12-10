@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     private CurrencyManager _currencyManager;
     private WeightManager _weightManager;
     private ItemGenerationManager _itemGenerationManager;
+    private AudioManager _audioManager;
 
     [Header("ShopManager fields")]
     [SerializeField] private Transform _shopPanel;
@@ -33,6 +34,11 @@ public class GameManager : MonoBehaviour
     [Header("ItemGenerationManager fields")]
     [SerializeField] private RandomItemGenerator _randomItemGenerator;
 
+    [Header("AudioManager fields")]
+    [SerializeField] private AudioController _audioController;
+    [SerializeField] private List<AudioScriptableObject> _audioSO;
+    [SerializeField] private AudioSource _audioSource;
+
     private void Start()
     {
         CreateManagers();
@@ -46,6 +52,7 @@ public class GameManager : MonoBehaviour
         _weightManager = new WeightManager(_weightController);
         _inventoryManager = new InventoryManager(_inventoryPanel, _inventoryItemPrefab, _inventoryController);
         _itemGenerationManager = new ItemGenerationManager(_shopItems, _randomItemGenerator);
+        _audioManager = new AudioManager(_audioController, _audioSO, _audioSource);
     }
 
     private void InjectDependencies()
