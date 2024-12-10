@@ -59,6 +59,6 @@ public class GameManager : MonoBehaviour
     {
         _shopManager.Init(_descriptionManager, _currencyManager, _weightManager, _inventoryManager, _audioManager);
         _inventoryManager.Init(_descriptionManager, _currencyManager, _weightManager, _shopManager);
-        _itemGenerationManager.Init(_inventoryManager);
+        _itemGenerationManager.Init(_inventoryManager, _audioManager);
     }
 }
