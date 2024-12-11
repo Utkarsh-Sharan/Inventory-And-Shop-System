@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _shopItemPrefab;
     [SerializeField] private List<ItemDataScriptableObject> _shopItems;
     [SerializeField] private ShopController _shopController;
+    [SerializeField] private ShopView _shopView;
 
     [Header("InventoryManager fields")]
     [SerializeField] private Transform _inventoryPanel;
@@ -47,7 +48,7 @@ public class GameManager : MonoBehaviour
 
     private void CreateManagers()
     {
-        _shopManager = new ShopManager(_shopPanel, _shopItemPrefab, _shopItems, _shopController);
+        _shopManager = new ShopManager(_shopPanel, _shopItemPrefab, _shopItems, _shopController, _shopView);
         _currencyManager = new CurrencyManager(_currencyController);
         _weightManager = new WeightManager(_weightController);
         _inventoryManager = new InventoryManager(_inventoryPanel, _inventoryItemPrefab, _inventoryController);

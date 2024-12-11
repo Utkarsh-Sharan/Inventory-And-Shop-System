@@ -1,0 +1,9 @@
+public enum ShopTab
+{
+    ALL_ITEMS,
+    ARMOR_ITEMS,
+    HELMET_ITEMS,
+    HEALABLE_ITEMS,
+    RING_ITEMS,
+    WEAPON_ITEMS
+}
