@@ -52,9 +52,6 @@ The game employs the **MVC (Model-View-Controller)** architecture for modular an
   - Easy to manage and extend item types.
   - Decouples data from logic for better reusability.
   - Allows centralized data modification without altering multiple scripts, improving scalability. **Scriptable Objects** are used for item definitions and audio configurations.
-- Benefits:
-  - Easy to manage and extend item types.
-  - Decouples data from logic for better reusability.
 
 ---
 
