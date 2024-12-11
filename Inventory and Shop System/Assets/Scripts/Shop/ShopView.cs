@@ -16,35 +16,35 @@ public class ShopView : MonoBehaviour
 
     public void ShowAllItems()
     {
-        FilterItemsByTab(ItemType.ALL);
+        FilterItemsByTab(ShopTab.ALL_ITEMS);
     }
 
     public void ShowArmorItems()
     {
-        FilterItemsByTab(ItemType.ARMOR);
+        FilterItemsByTab(ShopTab.ARMOR_ITEMS);
     }
 
     public void ShowHelmetItems()
     {
-        FilterItemsByTab(ItemType.HELMET);
+        FilterItemsByTab(ShopTab.HELMET_ITEMS);
     }
 
     public void ShowHealableItems()
     {
-        FilterItemsByTab(ItemType.HEALABLE);
+        FilterItemsByTab(ShopTab.HEALABLE_ITEMS);
     }
 
     public void ShowWeaponItems()
     {
-        FilterItemsByTab(ItemType.WEAPON);
+        FilterItemsByTab(ShopTab.WEAPON_ITEMS);
     }
 
     public void ShowRingItems()
     {
-        FilterItemsByTab(ItemType.RING);
+        FilterItemsByTab(ShopTab.RING_ITEMS);
     }
 
-    public void FilterItemsByTab(ItemType selectedTab)
+    public void FilterItemsByTab(ShopTab selectedTab)
     {
         foreach (var kvp in _allShopItems)
         {
@@ -54,8 +54,13 @@ public class ShopView : MonoBehaviour
             //determine if the item should be displayed based on the selected tab
             bool shouldDisplay = selectedTab switch
             {
-                ItemType.ALL => true,               //show all items
-                _ => itemType == selectedTab,       //show items matching the selected tab
+                ShopTab.ALL_ITEMS => true,
+                ShopTab.ARMOR_ITEMS => itemType == ItemType.ARMOR,
+                ShopTab.HELMET_ITEMS => itemType == ItemType.HELMET,
+                ShopTab.HEALABLE_ITEMS => itemType == ItemType.HEALABLE,
+                ShopTab.WEAPON_ITEMS => itemType == ItemType.WEAPON,
+                ShopTab.RING_ITEMS => itemType == ItemType.RING,
+                _ => false,
             };
 
             shopItem.gameObject.SetActive(shouldDisplay);
