@@ -67,7 +67,7 @@ The game employs the **MVC (Model-View-Controller)** architecture for modular an
 
 ---
 
-## Blocak Diagram-
+## Block Diagram-
 ![Code diagram](https://github.com/user-attachments/assets/6000f783-9795-481c-a6a5-b70f0f660d57)
 
 ---
