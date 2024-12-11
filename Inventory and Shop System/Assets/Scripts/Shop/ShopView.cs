@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class ShopView : MonoBehaviour
 {
-    private ShopController _shopController;
-
     private Dictionary<(ItemType, ItemRarity), ShopItem> _allShopItems;
 
     public void Init(ShopController shopController)
     {
-        _shopController = shopController;
         _allShopItems = shopController.GetShopItems();
     }
 

@@ -48,14 +48,12 @@ public class GameManager : MonoBehaviour
 
     private void CreateManagers()
     {
-        _shopManager = new ShopManager(_shopPanel, _shopItemPrefab, _shopItems, _shopController);
+        _shopManager = new ShopManager(_shopPanel, _shopItemPrefab, _shopItems, _shopController, _shopView);
         _currencyManager = new CurrencyManager(_currencyController);
         _weightManager = new WeightManager(_weightController);
         _inventoryManager = new InventoryManager(_inventoryPanel, _inventoryItemPrefab, _inventoryController);
         _itemGenerationManager = new ItemGenerationManager(_shopItems, _randomItemGenerator);
         _audioManager = new AudioManager(_audioController, _audioSO, _audioSource);
-
-        _shopView.Init(_shopController);
     }
 
     private void InjectDependencies()
