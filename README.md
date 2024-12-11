@@ -72,3 +72,8 @@ The game employs the **MVC (Model-View-Controller)** architecture for modular an
 
 ## Play here-
 https://quirexo.itch.io/inventory-and-shop-system
+
+---
+
+## Watch here-
+https://www.loom.com/share/e303201bcb234dde8c1a958c81670449?sid=34a9f03f-a637-4d55-9822-1e517541d302
