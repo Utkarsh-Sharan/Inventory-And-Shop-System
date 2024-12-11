@@ -1,4 +1,4 @@
-# Inventory and Shop System - Unity Game 🎮🛒
+# Inventory and Shop System 🎮🛒
 
 ## Overview 🌟
 This project is a Unity game featuring an **Inventory and Shop System**. The game divides the screen into two UI panels: one for the Shop and one for the Player's Inventory. Players can gather resources, manage their inventory, and interact with the shop to buy or sell items.
@@ -58,22 +58,6 @@ The game employs the **MVC (Model-View-Controller)** architecture for modular an
 
 ---
 
-## Getting Started 🏁
-
-### Prerequisites 📋
-- Unity (Version 2021.3 or higher recommended)
-- Basic knowledge of Unity's UI system and C# scripting
-
-### Installation 💾
-1. Clone the repository:
-   ```bash
-   git clone <repository-url>
-   ```
-2. Open the project in Unity.
-3. Play the game in the Unity Editor or build it for your desired platform.
-
----
-
 ## How to Play 🎮
 1. Start the game and explore the Shop and Player Inventory panels.
 2. Use the **Gather Resources** button to collect random items.
@@ -81,27 +65,5 @@ The game employs the **MVC (Model-View-Controller)** architecture for modular an
 3. Hover over items to view their detailed descriptions.
 4. Interact with the Shop to:
    - **Buy Items**: Use the currency to purchase items.
-   - **Sell Items**: Exchange items from your inventory for currency.
-
----
-
-## Future Enhancements 🔮
-- Add sorting and filtering options for items in the inventory and shop.
-- Introduce different rarity-based effects for items.
-- Enable drag-and-drop functionality for better inventory management.
-- Add sound effects and animations for item interactions.
-
----
-
-## Acknowledgments 🙏
-- This project demonstrates the use of **MVC architecture**, **Dependency Injection**, and **Scriptable Objects** for a clean and maintainable codebase.
-
----
-
-## License 📜
-This project is licensed under the MIT License. See the `LICENSE` file for more details.
-
----
-
-Feel free to contribute or provide feedback to enhance the system further!
-
+5. Interact with the Inventory to:
+   - **Sell Items**: Click on an inventory item to sell it and exchange it for currency.
