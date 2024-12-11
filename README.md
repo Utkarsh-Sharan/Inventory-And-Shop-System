@@ -67,3 +67,8 @@ The game employs the **MVC (Model-View-Controller)** architecture for modular an
    - **Buy Items**: Use the currency to purchase items.
 5. Interact with the Inventory to:
    - **Sell Items**: Click on an inventory item to sell it and exchange it for currency.
+
+---
+
+## Play here-
+https://quirexo.itch.io/inventory-and-shop-system
