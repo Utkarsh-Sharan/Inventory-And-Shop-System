@@ -1,48 +1,35 @@
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
-using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class ShopItem : MonoBehaviour, IPointerEnterHandler, IPointerDownHandler
+public class ShopItem : TradeItem
 { 
-    [SerializeField] private Image _itemImage;
-    [SerializeField] private Image _rarityBackgroundImage;
-    [SerializeField] private TextMeshProUGUI _itemQuantity;
-
     private ShopModel _shopModel;
     private ShopController _shopController;
 
-    public void SetShopController(ShopController shopController)
-    {
-        _shopController = shopController;
-    }
-
-    public void Initialize(ShopModel shopModel)
+    public void Initialize(ShopModel shopModel, ShopController shopController)
     {
         _shopModel = shopModel;
+        _shopController = shopController;
         DisplayItemImageRarityAndQuantity();
     }
 
-    public void DisplayItemImageRarityAndQuantity()
+    private void DisplayItemImageRarityAndQuantity()
     {
-        _itemImage.sprite = _shopModel.ItemDataSO.itemImage;
-        _rarityBackgroundImage.sprite = _shopModel.ItemDataSO.rarityBackgroundImage;
+        itemImage.sprite = _shopModel.ItemDataSO.itemImage;
+        rarityBackgroundImage.sprite = _shopModel.ItemDataSO.rarityBackgroundImage;
         DisplayItemQuantity();
     }
 
     public void DisplayItemQuantity()
     {
-        _itemQuantity.text = _shopModel.GetItemQuantity().ToString();
+        itemQuantity.text = _shopModel.GetItemQuantity().ToString();
     }
 
-    public void OnPointerEnter(PointerEventData eventData)
+    public override void OnPointerEnter(PointerEventData eventData)
     {
         _shopController.DescribeItem(this);
     }
 
-    public void OnPointerDown(PointerEventData eventData)
+    public override void OnPointerDown(PointerEventData eventData)
     {
         _shopController.PurchaseItem(this);
     }

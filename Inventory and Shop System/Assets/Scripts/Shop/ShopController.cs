@@ -38,8 +38,7 @@ public class ShopController : MonoBehaviour
             _shopItems[key] = shopModel;
             _shopItemsQuantityUI[key] = shopItem;
 
-            shopItem.SetShopController(this);
-            shopItem.Initialize(shopModel);
+            shopItem.Initialize(shopModel, this);
         }
     }
 

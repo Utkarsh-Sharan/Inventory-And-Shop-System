@@ -1,16 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
-using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
-public class InventoryItem : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler
+public class InventoryItem : TradeItem
 {
-    [SerializeField] private Image _itemImage;
-    [SerializeField] private Image _rarityBackgroundImage;
-    [SerializeField] private TextMeshProUGUI _itemQuantityText;
-
     private InventoryModel _inventoryModel;
     private InventoryController _inventoryController;
 
@@ -23,22 +14,22 @@ public class InventoryItem : MonoBehaviour, IPointerDownHandler, IPointerEnterHa
 
     private void UpdateItemImageRarityAndQuantity()
     {
-        _itemImage.sprite = _inventoryModel.ItemDataSO.itemImage;
-        _rarityBackgroundImage.sprite = _inventoryModel.ItemDataSO.rarityBackgroundImage;
+        itemImage.sprite = _inventoryModel.ItemDataSO.itemImage;
+        rarityBackgroundImage.sprite = _inventoryModel.ItemDataSO.rarityBackgroundImage;
         UpdateItemQuantity();
     }
 
     public void UpdateItemQuantity()
     {
-        _itemQuantityText.text = _inventoryModel.GetItemQuantity().ToString();
+        itemQuantity.text = _inventoryModel.GetItemQuantity().ToString();
     }
 
-    public void OnPointerEnter(PointerEventData eventData)
+    public override void OnPointerEnter(PointerEventData eventData)
     {
         _inventoryController.DescribeItem(this);
     }
 
-    public void OnPointerDown(PointerEventData eventData)
+    public override void OnPointerDown(PointerEventData eventData)
     {
         _inventoryController.SellItem(this);
     }

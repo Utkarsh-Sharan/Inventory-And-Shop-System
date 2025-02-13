@@ -345,9 +345,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0afead62225671d45a2aa9507dfe1481, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _itemImage: {fileID: 1090539421648726450}
-  _rarityBackgroundImage: {fileID: 5198811919571364183}
-  _itemQuantity: {fileID: 1241387007883322228}
+  itemImage: {fileID: 1090539421648726450}
+  rarityBackgroundImage: {fileID: 5198811919571364183}
+  itemQuantity: {fileID: 1241387007883322228}
 --- !u!1 &6691761698036004754
 GameObject:
   m_ObjectHideFlags: 0
