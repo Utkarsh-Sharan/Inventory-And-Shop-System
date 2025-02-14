@@ -1,13 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ShopController : MonoBehaviour
 {
     private Dictionary<(ItemType, ItemRarity), ShopModel> _shopItems = new();
     private Dictionary<(ItemType, ItemRarity), ShopItem> _shopItemsQuantityUI = new();
-
-    private ShopModel _shopModel;
 
     private DescriptionManager _descriptionManager;
     private CurrencyManager _currencyManager;
@@ -74,9 +73,8 @@ public class ShopController : MonoBehaviour
 
         if(IsItemPurchasable(model) && IsItemAvailable(model) && IsItemWeightInLimit(model))
         {
-            _audioManager.PlaySound(AudioType.ITEM_CLICKED);
-            _currencyManager.ItemPurchased(model.ItemDataSO.buyingPrice);
-            _weightManager.ItemPurchased(model.ItemDataSO.weight);
+            //PlaySound();
+            //UpdateCurrencyAndWeight(model);
 
             model.DecreaseItemQuantity();
             shopItem.UpdateItemQuantity(model);
