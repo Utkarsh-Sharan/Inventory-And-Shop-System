@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class ShopController : MonoBehaviour
 {
@@ -46,7 +45,7 @@ public class ShopController : MonoBehaviour
     {
         _audioManager.PlaySound(AudioType.ITEM_HOVER);
 
-        ShopModel model = shopItem.GetShopModel();
+        ShopModel model = shopItem.GetModel();
 
         _descriptionManager.ItemDescription
         (
@@ -65,13 +64,13 @@ public class ShopController : MonoBehaviour
         if(_shopItems.TryGetValue(key, out ShopModel model))
         {
             model.IncreaseItemQuantity();
-            _shopItemsQuantityUI[key].DisplayItemQuantity();
+            _shopItemsQuantityUI[key].UpdateItemQuantity(model);
         }
     }
 
     public void PurchaseItem(ShopItem shopItem)
     {
-        var model = shopItem.GetShopModel();
+        var model = shopItem.GetModel();
 
         if(IsItemPurchasable(model) && IsItemAvailable(model) && IsItemWeightInLimit(model))
         {
@@ -80,7 +79,7 @@ public class ShopController : MonoBehaviour
             _weightManager.ItemPurchased(model.ItemDataSO.weight);
 
             model.DecreaseItemQuantity();
-            shopItem.DisplayItemQuantity();
+            shopItem.UpdateItemQuantity(model);
 
             _inventoryManager.AddItemToInventory(model.ItemDataSO);
         }

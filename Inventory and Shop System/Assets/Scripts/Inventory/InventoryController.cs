@@ -35,7 +35,7 @@ public class InventoryController : MonoBehaviour
     {
         _audioManager.PlaySound(AudioType.ITEM_HOVER);
 
-        InventoryModel model = inventoryItem.GetInventoryModel();
+        InventoryModel model = inventoryItem.GetModel();
 
         _descriptionManager.ItemDescription
         (
@@ -71,7 +71,7 @@ public class InventoryController : MonoBehaviour
         if(_inventoryItems.TryGetValue(key, out InventoryModel model))  //if item already present in inventory, just increase its quantity
         {
             model.IncreaseItemQuantity();
-            _inventoryItemsQuantityUI[key].UpdateItemQuantity();
+            _inventoryItemsQuantityUI[key].UpdateItemQuantity(model);
         }
         else                                                            //else add item to the inventory
         {
@@ -89,7 +89,7 @@ public class InventoryController : MonoBehaviour
     public void SellItem(InventoryItem inventoryItem)
     {
         _audioManager.PlaySound(AudioType.ITEM_CLICKED);
-        InventoryModel model = inventoryItem.GetInventoryModel();
+        InventoryModel model = inventoryItem.GetModel();
         var key = (model.ItemDataSO.itemType, model.ItemDataSO.itemRarity);
 
         if(model.DecreaseItemQuantity() <= 0)       //if only 1 item present, remove it from the list and destroy the item
@@ -101,7 +101,7 @@ public class InventoryController : MonoBehaviour
         }
         else
         {
-            inventoryItem.UpdateItemQuantity();     //else update its quantity
+            inventoryItem.UpdateItemQuantity(model);     //else update its quantity
         }
 
         _currencyManager.ItemSold(model.ItemDataSO.sellingPrice);
