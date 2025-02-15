@@ -3,29 +3,22 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class ShopController : MonoBehaviour
+public class ShopController : TradeController
 {
     private Dictionary<(ItemType, ItemRarity), ShopModel> _shopItems = new();
     private Dictionary<(ItemType, ItemRarity), ShopItem> _shopItemsQuantityUI = new();
 
-    private DescriptionManager _descriptionManager;
-    private CurrencyManager _currencyManager;
-    private WeightManager _weightManager;
     private InventoryManager _inventoryManager;
-    private AudioManager _audioManager;
 
     public void Init(DescriptionManager descriptionManager, CurrencyManager currencyManager, WeightManager weightManager, InventoryManager inventoryManager, AudioManager audioManager)
     {
-        _descriptionManager = descriptionManager;
-        _currencyManager = currencyManager;
-        _weightManager = weightManager;
+        base.Init(descriptionManager, currencyManager, weightManager, audioManager);
         _inventoryManager = inventoryManager;
-        _audioManager = audioManager;
     }
 
     public void Initialize(Transform shopPanel, GameObject shopItemPrefab, List<ItemDataScriptableObject> shopItems)
     {
-        foreach(var itemData in shopItems )
+        foreach(var itemData in shopItems)
         {
             var key = (itemData.itemType, itemData.itemRarity);
 
@@ -38,22 +31,6 @@ public class ShopController : MonoBehaviour
 
             shopItem.Initialize(shopModel, this);
         }
-    }
-
-    public void DescribeItem(ShopItem shopItem)
-    {
-        _audioManager.PlaySound(AudioType.ITEM_HOVER);
-
-        ShopModel model = shopItem.GetModel();
-
-        _descriptionManager.ItemDescription
-        (
-            model.GetItemType(),
-            model.ItemDataSO.buyingPrice,
-            model.ItemDataSO.sellingPrice,
-            model.ItemDataSO.weight,
-            model.GetItemRarity()
-        );
     }
 
     public void RestockShopItem(ItemDataScriptableObject itemData)
@@ -73,8 +50,8 @@ public class ShopController : MonoBehaviour
 
         if(IsItemPurchasable(model) && IsItemAvailable(model) && IsItemWeightInLimit(model))
         {
-            //PlaySound();
-            //UpdateCurrencyAndWeight(model);
+            audioManager.PlaySound(AudioType.ITEM_CLICKED);
+            UpdateCurrencyAndWeight(model);
 
             model.DecreaseItemQuantity();
             shopItem.UpdateItemQuantity(model);
@@ -83,27 +60,15 @@ public class ShopController : MonoBehaviour
         }
         else
         {
-            _audioManager.PlaySound(AudioType.ERROR);
+            audioManager.PlaySound(AudioType.ERROR);
         }
     }
 
-    private bool IsItemPurchasable(ShopModel model)
-    {
-        return model.ItemDataSO.buyingPrice <= _currencyManager.GetCurrentCurrency();
-    }
+    private bool IsItemPurchasable(ShopModel model) => (model.ItemDataSO.buyingPrice <= currencyManager.GetCurrentCurrency());
 
-    private bool IsItemAvailable(ShopModel model)
-    {
-        return model.GetItemQuantity() > 0;
-    }
+    private bool IsItemAvailable(ShopModel model) => (model.GetItemQuantity() > 0);
 
-    private bool IsItemWeightInLimit(ShopModel model)
-    {
-        return model.ItemDataSO.weight <= _weightManager.GetRemainingWeight();
-    }
+    private bool IsItemWeightInLimit(ShopModel model) => (model.ItemDataSO.weight <= weightManager.GetRemainingWeight());
 
-    public Dictionary<(ItemType, ItemRarity), ShopItem> GetShopItems()
-    {
-        return _shopItemsQuantityUI;
-    }
+    public Dictionary<(ItemType, ItemRarity), ShopItem> GetShopItems() => _shopItemsQuantityUI;
 }

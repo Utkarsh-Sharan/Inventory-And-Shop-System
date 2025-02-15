@@ -28,7 +28,7 @@ public class ShopManager
         _shopView.Init(_shopController);
     }
 
-    public void ItemSold(ItemDataScriptableObject itemData)
+    public void AddItemToShop(ItemDataScriptableObject itemData)
     {
         _shopController.RestockShopItem(itemData);
     }

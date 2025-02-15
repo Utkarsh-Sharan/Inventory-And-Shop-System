@@ -2,13 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TradeController<TModel, TItem> : MonoBehaviour 
-    where TModel : class 
-    where TItem : TradeItem<TModel, TradeController<TModel, TItem>>
+public class TradeController : MonoBehaviour
 {
-    protected Dictionary<(ItemType, ItemRarity), TModel> model = new();
-    protected Dictionary<(ItemType, ItemRarity), TItem> itemQuantityUI = new();
-
     protected DescriptionManager descriptionManager;
     protected CurrencyManager currencyManager;
     protected WeightManager weightManager;
@@ -22,9 +17,22 @@ public class TradeController<TModel, TItem> : MonoBehaviour
         this.audioManager = audioManager;
     }
 
-    protected void PlaySound()
+    public void DescribeItem<TModel, TController>(TradeItem<TModel, TController> tradeItem)
+        where TModel : TradeModel
+        where TController : TradeController
     {
-        audioManager.PlaySound(AudioType.ITEM_CLICKED);
+        audioManager.PlaySound(AudioType.ITEM_HOVER);
+
+        TradeModel model = tradeItem.GetModel();
+
+        descriptionManager.ItemDescription
+        (
+            model.GetItemType(),
+            model.ItemDataSO.buyingPrice,
+            model.ItemDataSO.sellingPrice,
+            model.ItemDataSO.weight,
+            model.GetItemRarity()
+        );
     }
 
     protected void UpdateCurrencyAndWeight(TradeModel model)
