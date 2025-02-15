@@ -66,6 +66,7 @@ public class InventoryController : TradeController
     public void SellItem(InventoryItem inventoryItem)
     {
         audioManager.PlaySound(AudioType.ITEM_CLICKED);
+
         InventoryModel model = inventoryItem.GetModel();
         var key = (model.ItemDataSO.itemType, model.ItemDataSO.itemRarity);
 

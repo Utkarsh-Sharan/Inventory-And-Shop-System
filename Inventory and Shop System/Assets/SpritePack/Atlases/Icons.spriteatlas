@@ -86,6 +86,7 @@ SpriteAtlas:
     - 865ffc765fa708b49aef6dc9e46d7a50: 21300000
     - 2624c48670f92d649b04d03fe36abcd8: 21300000
     - dbaa50961e3cd37468021eb65d631c9f: 21300000
+    - f6031ba654156844c9de2bb51927bfc5: 21300000
     - 9309c4b66286c02498fce9e465b4916b: 21300000
     - 77a00e374896a4e4cb097f3d0d0c1cde: 21300000
     - cb71f977c061814419dd5a6a79a1a061: 21300000
@@ -178,6 +179,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 865ffc765fa708b49aef6dc9e46d7a50, type: 3}
   - {fileID: 21300000, guid: 2624c48670f92d649b04d03fe36abcd8, type: 3}
   - {fileID: 21300000, guid: dbaa50961e3cd37468021eb65d631c9f, type: 3}
+  - {fileID: 21300000, guid: f6031ba654156844c9de2bb51927bfc5, type: 3}
   - {fileID: 21300000, guid: 9309c4b66286c02498fce9e465b4916b, type: 3}
   - {fileID: 21300000, guid: 77a00e374896a4e4cb097f3d0d0c1cde, type: 3}
   - {fileID: 21300000, guid: cb71f977c061814419dd5a6a79a1a061, type: 3}
@@ -269,6 +271,7 @@ SpriteAtlas:
   - ButcherKnife
   - MarauderBow
   - Grog
+  - arrow button
   - GreyKnight
   - QuantityBackground
   - RedwoodBow
