@@ -82,7 +82,7 @@ public class InventoryController : TradeController
             inventoryItem.UpdateItemQuantity(model);  //else update its quantity
         }
 
-        UpdateCurrencyAndWeight(model);
+        UpdateCurrencyAndWeight(model, !IS_BUYING);
         _shopManager.AddItemToShop(model.ItemDataSO);
     }
 }

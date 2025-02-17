@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -33,11 +34,11 @@ public class ShopController : TradeController
         }
     }
 
-    public void RestockShopItem(ItemDataScriptableObject itemData)
+    public void AddItemToShop(ItemDataScriptableObject itemData)
     {
         var key = (itemData.itemType, itemData.itemRarity);
 
-        if(_shopItems.TryGetValue(key, out ShopModel model))
+        if (_shopItems.TryGetValue(key, out ShopModel model))
         {
             model.IncreaseItemQuantity();
             _shopItemsQuantityUI[key].UpdateItemQuantity(model);
@@ -51,7 +52,7 @@ public class ShopController : TradeController
         if(IsItemPurchasable(model) && IsItemAvailable(model) && IsItemWeightInLimit(model))
         {
             audioManager.PlaySound(AudioType.ITEM_CLICKED);
-            UpdateCurrencyAndWeight(model);
+            UpdateCurrencyAndWeight(model, IS_BUYING);
 
             model.DecreaseItemQuantity();
             shopItem.UpdateItemQuantity(model);

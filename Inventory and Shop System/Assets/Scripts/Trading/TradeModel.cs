@@ -21,19 +21,19 @@ public class TradeModel
         switch (ItemDataSO.itemType)
         {
             case ItemType.ARMOR:
-                return StringConstants.armorString;
+                return StringConstants.ARMOR_STRING;
 
             case ItemType.HELMET:
-                return StringConstants.helmetString;
+                return StringConstants.HELMET_STRING;
 
             case ItemType.WEAPON:
-                return StringConstants.weaponString;
+                return StringConstants.WEAPON_STRING;
 
             case ItemType.HEALABLE:
-                return StringConstants.healableString;
+                return StringConstants.HEALABLE_STRING;
 
             case ItemType.RING:
-                return StringConstants.ringString;
+                return StringConstants.RING_STRING;
 
             default:
                 Debug.LogError("Item type does not exist!");
@@ -47,16 +47,16 @@ public class TradeModel
         switch (ItemDataSO.itemRarity)
         {
             case ItemRarity.COMMON:
-                return StringConstants.commonRarityString;
+                return StringConstants.COMMON_RARITY_STRING;
 
             case ItemRarity.RARE:
-                return StringConstants.rareRarityString;
+                return StringConstants.RARE_RARITY_STRING;
 
             case ItemRarity.EPIC:
-                return StringConstants.epicRarityString;
+                return StringConstants.EPIC_RARITY_STRING;
 
             case ItemRarity.LEGENDARY:
-                return StringConstants.legendaryRarityString;
+                return StringConstants.LEGENDARY_RARITY_STRING;
 
             default:
                 Debug.LogError("Rarity does not exist!");
