@@ -420,6 +420,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1d35ab0f93a34c418c3f00dc87fb620, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _itemImage: {fileID: 1384771443103824081}
-  _rarityBackgroundImage: {fileID: 1623368818646544161}
-  _itemQuantityText: {fileID: 7528332288995577899}
+  itemImage: {fileID: 1384771443103824081}
+  rarityBackgroundImage: {fileID: 1623368818646544161}
+  itemQuantity: {fileID: 7528332288995577899}

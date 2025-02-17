@@ -1,13 +1,13 @@
 public class StringConstants
 {
-    public const string armorString = "Armor";
-    public const string helmetString = "Helmet";
-    public const string weaponString = "Weapon";
-    public const string healableString = "Healable";
-    public const string ringString = "Ring";
+    public const string ARMOR_STRING = "Armor";
+    public const string HELMET_STRING = "Helmet";
+    public const string WEAPON_STRING = "Weapon";
+    public const string HEALABLE_STRING = "Healable";
+    public const string RING_STRING = "Ring";
 
-    public const string commonRarityString = "Common";
-    public const string rareRarityString = "Rare";
-    public const string epicRarityString = "Epic";
-    public const string legendaryRarityString = "Legendary";
+    public const string COMMON_RARITY_STRING = "Common";
+    public const string RARE_RARITY_STRING = "Rare";
+    public const string EPIC_RARITY_STRING = "Epic";
+    public const string LEGENDARY_RARITY_STRING = "Legendary";
 }

@@ -58,6 +58,7 @@ SpriteAtlas:
     - b7d19ec039fa7b141bd165aa95496c75: 21300000
     - f84b6dd0347a94f4a9a69ac911fc1f9d: 21300000
     - d1debd018f9877c408ca2c35857bb8c2: 21300000
+    - fd8c0211ae439274e914b1cef0cb2408: 21300000
     - b9505e419a14dda4ea399d26d5955f94: 21300000
     - f66c057114b8725409847a8a8e83a75b: 21300000
     - 789e518168d493d4396ec984b1b5bcb3: 21300000
@@ -86,6 +87,7 @@ SpriteAtlas:
     - 865ffc765fa708b49aef6dc9e46d7a50: 21300000
     - 2624c48670f92d649b04d03fe36abcd8: 21300000
     - dbaa50961e3cd37468021eb65d631c9f: 21300000
+    - f6031ba654156844c9de2bb51927bfc5: 21300000
     - 9309c4b66286c02498fce9e465b4916b: 21300000
     - 77a00e374896a4e4cb097f3d0d0c1cde: 21300000
     - cb71f977c061814419dd5a6a79a1a061: 21300000
@@ -150,6 +152,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: b7d19ec039fa7b141bd165aa95496c75, type: 3}
   - {fileID: 21300000, guid: f84b6dd0347a94f4a9a69ac911fc1f9d, type: 3}
   - {fileID: 21300000, guid: d1debd018f9877c408ca2c35857bb8c2, type: 3}
+  - {fileID: 21300000, guid: fd8c0211ae439274e914b1cef0cb2408, type: 3}
   - {fileID: 21300000, guid: b9505e419a14dda4ea399d26d5955f94, type: 3}
   - {fileID: 21300000, guid: f66c057114b8725409847a8a8e83a75b, type: 3}
   - {fileID: 21300000, guid: 789e518168d493d4396ec984b1b5bcb3, type: 3}
@@ -178,6 +181,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 865ffc765fa708b49aef6dc9e46d7a50, type: 3}
   - {fileID: 21300000, guid: 2624c48670f92d649b04d03fe36abcd8, type: 3}
   - {fileID: 21300000, guid: dbaa50961e3cd37468021eb65d631c9f, type: 3}
+  - {fileID: 21300000, guid: f6031ba654156844c9de2bb51927bfc5, type: 3}
   - {fileID: 21300000, guid: 9309c4b66286c02498fce9e465b4916b, type: 3}
   - {fileID: 21300000, guid: 77a00e374896a4e4cb097f3d0d0c1cde, type: 3}
   - {fileID: 21300000, guid: cb71f977c061814419dd5a6a79a1a061, type: 3}
@@ -241,6 +245,7 @@ SpriteAtlas:
   - SmallPotion
   - SilverRing
   - GladiatorShield
+  - yellow arrow
   - SteelAxe
   - MagicGoldenRing
   - BalancedSword [Paint]
@@ -269,6 +274,7 @@ SpriteAtlas:
   - ButcherKnife
   - MarauderBow
   - Grog
+  - arrow button
   - GreyKnight
   - QuantityBackground
   - RedwoodBow
