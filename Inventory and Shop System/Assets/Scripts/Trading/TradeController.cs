@@ -6,8 +6,6 @@ public class TradeController : MonoBehaviour
 {
     protected const bool IS_BUYING = true;
 
-    private Dictionary<(ItemType, ItemRarity), TradeModel> tradeItems = new();
-
     protected DescriptionManager descriptionManager;
     protected CurrencyManager currencyManager;
     protected WeightManager weightManager;
@@ -38,32 +36,6 @@ public class TradeController : MonoBehaviour
             model.GetItemRarity()
         );
     }
-
-    //public void AddItemToDestination(ItemDataScriptableObject itemSO)
-    //{
-    //    var key = (itemSO.itemType, itemSO.itemRarity);
-
-    //    if (tradeItems.TryGetValue(key, out TradeModel model))
-    //    {
-    //        if (model is ShopModel)
-    //        {
-    //            model.IncreaseItemQuantity();
-    //            ShopController shopController = new ShopController();
-    //            shopController.GetShopItems()[key].UpdateItemQuantity(model);
-    //        }
-    //        else
-    //        {
-    //            if (model is InventoryModel)
-    //            {
-    //                //inventory addition logic
-    //            }
-    //            else
-    //            {
-    //                //inventory addition logic
-    //            }
-    //        }
-    //    }
-    //}
 
     protected void UpdateCurrencyAndWeight(TradeModel model, bool isBuying)
     {
