@@ -1,38 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class CurrencyController : MonoBehaviour
 {
-    [SerializeField] private CurrencyView _currencyView;
-    private CurrencyModel _currencyModel;
+    [SerializeField] private TextMeshProUGUI _currencyText;
+    private float _initialCurrency = 0f;
+    private float _currentCurrency;
 
     public void Initialize()
     {
-        _currencyModel = new CurrencyModel();
-        _currencyView.SetController(this);
-        _currencyView.UpdateCurrency();
+        _currentCurrency = _initialCurrency;
+        UpdateCurrency();
     }
 
     public void ItemPurchased(float value)
     {
-        _currencyModel.DecrementCurrency(value);
-        _currencyView.UpdateCurrency();
+        _currentCurrency -= value;
+        UpdateCurrency();
     }
 
     public void ItemSold(float value)
     {
-        _currencyModel.IncrementCurrency(value);
-        _currencyView.UpdateCurrency();
+        _currentCurrency += value;
+        UpdateCurrency();
     }
 
-    public CurrencyModel GetCurrencyModel()
+    public void UpdateCurrency()
     {
-        return _currencyModel;
+        _currencyText.text = $"Currency left : {GetCurrentCurrency()} Units";
     }
 
     public float GetCurrentCurrency()
     {
-        return _currencyModel.GetCurrentCurrency();
+        return _currentCurrency;
     }
 }

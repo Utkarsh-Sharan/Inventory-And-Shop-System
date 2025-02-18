@@ -1,43 +1,52 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
+using TMPro;
 using UnityEngine;
 
 public class WeightController : MonoBehaviour
 {
-    [SerializeField] private WeightView _weightView;
-    private WeightModel _weightModel;
+    private const float _EPSILON = 1e-6f;
+
+    [SerializeField] private TextMeshProUGUI _weightText;
+
+    private float _initialWeight = 0f;
+    private float _currentWeight;
+    private float _weightLimit = 15f;
 
     public void Initialize()
     {
-        _weightModel = new WeightModel();
-        _weightView.SetController(this);
-        _weightView.UpdateWeight();
+        _currentWeight = _initialWeight;
+        UpdateWeight();
     }
 
     public void ItemPurchased(float value)
     {
-        _weightModel.IncrementWeight(value);
-        _weightView.UpdateWeight();
+        _currentWeight += value;
+
+        if (_currentWeight > _weightLimit)
+        {
+            _currentWeight = _weightLimit;
+        }
+
+        UpdateWeight();
     }
 
     public void ItemSold(float value)
     {
-        _weightModel.DecrementWeight(value);
-        _weightView.UpdateWeight();
+        _currentWeight -= value;
+
+        if (_currentWeight <= 0f)
+        {
+            _currentWeight = 0f;
+        }
+
+        UpdateWeight();
     }
 
-    public WeightModel GetWeightModel()
-    {
-        return _weightModel;
-    }
+    public float GetRemainingWeight() => (_weightLimit - _currentWeight);
 
-    public float GetRemainingWeight()
-    {
-        return _weightModel.GetRemainingWeight();
-    }
+    public bool CanAddWeight(float value) => GetCurrentWeight() + value <= _weightLimit;
 
-    public bool CanAddWeight(float value)
-    {
-        return _weightModel.GetCurrentWeight() + value <= _weightModel.GetWeightLimit();
-    }
+    public void UpdateWeight() => _weightText.text = $"Current weight : {GetCurrentWeight()} kg";
+
+    public float GetCurrentWeight() => Math.Abs(_currentWeight) < _EPSILON ? 0 : _currentWeight;
 }
