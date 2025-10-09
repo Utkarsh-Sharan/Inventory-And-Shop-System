@@ -1,5 +1,9 @@
 # Inventory and Shop System 🎮🛒
 
+## ⚠️ **Archived Project Notice**  
+This Unity project is no longer maintained and may contain unpatched binaries affected by CVE-2025-59489.  
+Please do not use or distribute without applying Unity’s official security patch.
+
 ## Overview 🌟
 This project is a Unity game featuring an **Inventory and Shop System**. The game divides the screen into two UI panels: one for the Shop and one for the Player's Inventory. Players can gather resources, manage their inventory, and interact with the shop to buy or sell items.
 
@@ -69,11 +73,6 @@ The game employs the **MVC (Model-View-Controller)** architecture for modular an
 
 ## Block Diagram-
 ![Code diagram](https://github.com/user-attachments/assets/6000f783-9795-481c-a6a5-b70f0f660d57)
-
----
-
-## Play here-
-https://outscal.com/utkarshsharan99/game/play-inventory-and-shop-system-game
 
 ---
 
